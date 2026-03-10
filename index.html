@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>CitraLand Puri Serang – Virtual Tour 360°</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#C9A84C;--gold-light:#e8c97a;
+  --dark:#0d0d0d;--dark2:#141414;--dark3:#1e1e1e;
+  --white:#f5f0e8;--muted:#8a7a5a;
+}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--white);font-family:'Montserrat',sans-serif;font-weight:300;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,0.0);transition:.4s;backdrop-filter:blur(0px)}
+nav.s{background:rgba(8,8,8,0.96);backdrop-filter:blur(12px);padding:13px 6%;box-shadow:0 1px 30px rgba(0,0,0,.6)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--gold);letter-spacing:3px;text-decoration:none}
+.logo b{color:var(--white);font-weight:400}
+.navr{display:flex;gap:28px;align-items:center}
+.navr a{font-size:.68rem;letter-spacing:2px;text-transform:uppercase;color:rgba(245,240,232,.7);text-decoration:none;transition:.3s}
+.navr a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold)!important;color:var(--dark)!important;padding:9px 20px;font-weight:600!important}
+
+/* HERO */
+#hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.hbg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80')center/cover;transform:scale(1.08);transition:transform 10s ease}
+.hbg.z{transform:scale(1)}
+.hov{position:absolute;inset:0;background:linear-gradient(160deg,rgba(0,0,0,.8)0%,rgba(5,3,0,.65)60%,rgba(0,0,0,.85)100%)}
+.hc{position:relative;z-index:2;max-width:820px;padding:0 24px}
+.hbadge{display:inline-block;border:1px solid rgba(201,168,76,.6);color:var(--gold);font-size:.62rem;letter-spacing:5px;text-transform:uppercase;padding:7px 22px;margin-bottom:28px}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,8vw,5.8rem);font-weight:600;line-height:1.05;color:#fff;margin-bottom:20px}
+h1 em{font-style:italic;color:var(--gold)}
+.hsub{font-size:.82rem;letter-spacing:1px;color:rgba(245,240,232,.65);max-width:520px;margin:0 auto 36px;line-height:2}
+.hbtns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.bg{background:var(--gold);color:var(--dark);padding:13px 34px;font-size:.72rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:2px solid var(--gold);transition:.3s}
+.bg:hover{background:transparent;color:var(--gold)}
+.bo{border:2px solid rgba(245,240,232,.4);color:var(--white);padding:13px 34px;font-size:.72rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:.3s}
+.bo:hover{border-color:var(--gold);color:var(--gold)}
+.hscroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(245,240,232,.4);font-size:.6rem;letter-spacing:3px;text-transform:uppercase}
+.sl{width:1px;height:48px;background:linear-gradient(to bottom,var(--gold),transparent);animation:sl 2s ease-in-out infinite}
+@keyframes sl{0%,100%{opacity:.3;transform:scaleY(.5)}50%{opacity:1;transform:scaleY(1)}}
+
+/* BAND */
+.band{background:linear-gradient(135deg,#171207,#221a05);border-top:1px solid rgba(201,168,76,.25);border-bottom:1px solid rgba(201,168,76,.25);display:grid;grid-template-columns:repeat(4,1fr)}
+.bi{text-align:center;padding:32px 16px;border-right:1px solid rgba(201,168,76,.1)}
+.bi:last-child{border-right:none}
+.bn{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--gold)}
+.bl{font-size:.6rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-top:4px}
+
+/* SECTION */
+section{padding:90px 6%}
+.sl2{font-size:.62rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.sh{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.5vw,3rem);font-weight:600;line-height:1.2;color:var(--white);margin-bottom:18px}
+.sd{width:44px;height:2px;background:var(--gold);margin-bottom:22px}
+.st{color:var(--muted);line-height:2;font-size:.84rem;max-width:540px}
+
+/* TOUR SECTION */
+#tour{background:var(--dark2);padding:90px 0 0}
+.th{text-align:center;padding:0 6% 50px}
+.th .sd{margin:0 auto 22px}
+.th .st{margin:0 auto;text-align:center}
+
+/* TOUR TABS */
+.ttabs{display:flex;background:var(--dark3);border-bottom:1px solid rgba(201,168,76,.15)}
+.tt{flex:1;padding:16px 10px;font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);cursor:pointer;background:none;border:none;border-bottom:2px solid transparent;transition:.3s;font-family:'Montserrat',sans-serif}
+.tt:hover{color:var(--gold)}
+.tt.a{color:var(--gold);border-bottom:2px solid var(--gold);background:rgba(201,168,76,.04)}
+
+/* PANNELLUM WRAPPER */
+#pv{width:100%;height:580px;position:relative}
+.poverlay{position:absolute;top:20px;left:20px;z-index:100;background:rgba(0,0,0,.75);border:1px solid var(--gold);padding:9px 18px;backdrop-filter:blur(8px);pointer-events:none}
+.poverlay span{font-size:.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.ptip{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);z-index:100;background:rgba(0,0,0,.7);border:1px solid rgba(201,168,76,.3);padding:8px 20px;backdrop-filter:blur(6px);white-space:nowrap;pointer-events:none}
+.ptip span{font-size:.6rem;letter-spacing:1.5px;color:rgba(245,240,232,.6)}
+
+/* ATLAS IFRAME SECTION */
+#atlas-section{width:100%;background:#000;position:relative}
+.atlas-header{background:var(--dark3);padding:20px 6%;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(201,168,76,.2)}
+.atlas-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--white)}
+.atlas-badge{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.4);padding:5px 14px}
+#yt-frame{width:100%;height:520px;border:none;display:block}
+
+/* UNITS */
+#units{background:var(--dark)}
+.ug{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.uc{background:var(--dark2);border:1px solid rgba(201,168,76,.1);overflow:hidden;transition:.4s}
+.uc:hover{transform:translateY(-8px);border-color:rgba(201,168,76,.5)}
+.uiw{overflow:hidden;position:relative}
+.ui{width:100%;aspect-ratio:4/3;object-fit:cover;transition:.5s;display:block}
+.uc:hover .ui{transform:scale(1.06)}
+.ub2{position:absolute;top:14px;left:14px;font-size:.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 12px}
+.ubod{padding:26px}
+.un{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--white);margin-bottom:4px}
+.ucl{font-size:.62rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+.usp{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.usp span{font-size:.72rem;color:var(--muted)}
+.up{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--gold);border-top:1px solid rgba(201,168,76,.15);padding-top:14px}
+.upl{font-size:.6rem;font-family:'Montserrat',sans-serif;font-weight:300;color:var(--muted);display:block;margin-top:2px;letter-spacing:.5px}
+
+/* FACILITIES */
+#fas{background:var(--dark3)}
+.fg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.fc{background:var(--dark2);border:1px solid rgba(201,168,76,.08);padding:32px 22px;text-align:center;transition:.4s}
+.fc:hover{border-color:var(--gold);transform:translateY(-5px)}
+.fi{font-size:1.8rem;margin-bottom:14px;display:block}
+.fn{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--white);margin-bottom:6px}
+.fd{font-size:.72rem;color:var(--muted);line-height:1.7}
+
+/* CTA */
+#cta{background:var(--dark2);text-align:center;position:relative;overflow:hidden}
+#cta::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1600&q=50')center/cover;opacity:.06}
+.ctac{position:relative;z-index:2;max-width:680px;margin:0 auto}
+.wa{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:15px 38px;font-size:.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:.3s;margin-top:32px}
+.wa:hover{background:#1ebe5d;transform:translateY(-3px)}
+.wa svg{width:20px;height:20px;fill:#fff}
+
+/* FOOTER */
+footer{background:#070707;padding:50px 6% 28px;border-top:1px solid rgba(201,168,76,.12)}
+.fg2{display:grid;grid-template-columns:2fr 1fr 1fr;gap:52px;margin-bottom:44px}
+.flogo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--gold);display:block;margin-bottom:14px}
+.fdesc{font-size:.76rem;color:var(--muted);line-height:1.9}
+.fh{font-size:.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.fl{list-style:none}
+.fl li{margin-bottom:9px}
+.fl a{font-size:.75rem;color:var(--muted);text-decoration:none;transition:.3s}
+.fl a:hover{color:var(--gold)}
+.fb{border-top:1px solid rgba(255,255,255,.05);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.fb span{font-size:.68rem;color:rgba(138,122,90,.5)}
+.fb em{font-style:normal;color:var(--gold)}
+
+/* FLOATING WA */
+.waf{position:fixed;bottom:28px;right:28px;z-index:998;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.4);text-decoration:none;animation:wp 2.5s ease-in-out infinite}
+@keyframes wp{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.4)}50%{box-shadow:0 6px 40px rgba(37,211,102,.7)}}
+.waf svg{width:26px;height:26px;fill:#fff}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .band{grid-template-columns:repeat(2,1fr)}
+  .ug{grid-template-columns:1fr 1fr}
+  .fg{grid-template-columns:repeat(2,1fr)}
+  .fg2{grid-template-columns:1fr}
+  .navr a:not(.nav-cta){display:none}
+  #pv{height:360px}
+  #yt-frame{height:340px}
+}
+@media(max-width:580px){
+  .ug{grid-template-columns:1fr}
+  .band{grid-template-columns:repeat(2,1fr)}
+  #pv{height:300px}
+  .ttabs{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nb">
+  <a href="#" class="logo">Citra<b>Land</b></a>
+  <div class="navr">
+    <a href="#tour">Virtual Tour</a>
+    <a href="#units">Tipe Unit</a>
+    <a href="#fas">Fasilitas</a>
+    <a href="#cta" class="nav-cta">Hubungi Agen</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hbg" id="hbg"></div>
+  <div class="hov"></div>
+  <div class="hc">
+    <div class="hbadge">Ciputra Group · Kota Serang · Banten</div>
+    <h1>Hunian <em>Mewah</em><br>Urban Lifestyle<br>Jantung Serang</h1>
+    <p class="hsub">CitraLand Puri Serang — kawasan residensial prestisius di atas 60 hektar dengan konsep Sustainable Living oleh Grup Ciputra.</p>
+    <div class="hbtns">
+      <a href="#tour" class="bg">Virtual Tour 360°</a>
+      <a href="#units" class="bo">Lihat Tipe Unit</a>
+    </div>
+  </div>
+  <div class="hscroll"><div class="sl"></div>Scroll</div>
+</section>
+
+<!-- STATS BAND -->
+<div class="band">
+  <div class="bi"><div class="bn">60+</div><div class="bl">Hektar Kawasan</div></div>
+  <div class="bi"><div class="bn">7+</div><div class="bl">Cluster Hunian</div></div>
+  <div class="bi"><div class="bn">Rp 664Jt</div><div class="bl">Harga Mulai</div></div>
+  <div class="bi"><div class="bn">2026</div><div class="bl">Tersedia Sekarang</div></div>
+</div>
+
+<!-- VIRTUAL TOUR 360° -->
+<section id="tour">
+  <div class="th">
+    <p class="sl2">Immersive Experience</p>
+    <h2 class="sh">Virtual Tour 360°</h2>
+    <div class="sd"></div>
+    <p class="st">Jelajahi interior unit <strong style="color:var(--gold)">Cluster Florentyn</strong> secara interaktif. Putar, zoom, dan eksplorasi setiap sudut ruangan.</p>
+  </div>
+
+  <!-- TABS -->
+  <div class="ttabs">
+    <button class="tt a" onclick="loadScene('living',this)">🛋 Ruang Tamu</button>
+    <button class="tt" onclick="loadScene('bedroom',this)">🛏 Kamar Utama</button>
+    <button class="tt" onclick="loadScene('kitchen',this)">🍳 Dapur</button>
+    <button class="tt" onclick="loadScene('outdoor',this)">🌿 Eksterior</button>
+    <button class="tt" onclick="showYT()">▶ Video Atlas Tour</button>
+  </div>
+
+  <!-- PANNELLUM 360 -->
+  <div id="pv-wrap">
+    <div id="pv">
+      <div class="poverlay"><span id="rlabel">Ruang Tamu · Florentyn</span></div>
+      <div class="ptip"><span>🖱 Klik+geser untuk melihat 360° · Scroll untuk zoom</span></div>
+    </div>
+  </div>
+
+  <!-- ATLAS YOUTUBE EMBED (hidden by default) -->
+  <div id="atlas-section" style="display:none">
+    <div class="atlas-header">
+      <div>
+        <div class="atlas-title">Atlas Virtual Tour — CitraLand Puri Serang Florentyn</div>
+        <div style="font-size:.68rem;color:var(--muted);margin-top:4px;letter-spacing:1px">Presentasi resmi oleh Atlas Reality × CitraLand Puri Serang</div>
+      </div>
+      <div class="atlas-badge">Atlas Reality Official</div>
+    </div>
+    <iframe
+      id="yt-frame"
+      src=""
+      data-src="https://www.youtube.com/embed/Hj9HcpBSZ8Y?autoplay=1&rel=0&modestbranding=1&color=white"
+      title="Atlas Virtual Tour CitraLand Puri Serang Florentyn"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+    <div style="padding:16px 6%;background:var(--dark3);text-align:center">
+      <a href="https://atlasvirtual.id/tour/citraland-somerset/" target="_blank" class="bg" style="display:inline-block;margin-right:12px">Buka Atlas Tour Penuh ↗</a>
+      <button onclick="showPannellum()" class="bo" style="cursor:pointer;font-family:'Montserrat',sans-serif">← Kembali ke Tour 360°</button>
+    </div>
+  </div>
+</section>
+
+<!-- UNIT TYPES -->
+<section id="units">
+  <div style="text-align:center;margin-bottom:52px">
+    <p class="sl2">Pilihan Hunian</p>
+    <h2 class="sh">Tipe Unit Tersedia</h2>
+    <div class="sd" style="margin:0 auto 0"></div>
+  </div>
+  <div class="ug">
+    <div class="uc">
+      <div class="uiw">
+        <img class="ui" src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&q=80" alt="Florentyn"/>
+        <div class="ub2" style="background:var(--gold);color:var(--dark)">✦ Terlaris</div>
+      </div>
+      <div class="ubod">
+        <div class="un">Florentyn</div>
+        <div class="ucl">Cluster Florentyn · Atlas Tour Available</div>
+        <div class="usp">
+          <span>🛏 3 KT</span><span>🚿 2 KM</span><span>📐 LT 75m²</span><span>🏠 LB 55m²</span>
+        </div>
+        <div class="up">Rp 664 – 922 Jt<span class="upl">KPR tersedia · Harga perdana</span></div>
+      </div>
+    </div>
+    <div class="uc">
+      <div class="uiw">
+        <img class="ui" src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=600&q=80" alt="Cremona Vivace"/>
+        <div class="ub2" style="background:transparent;color:var(--gold);border:1px solid var(--gold)">Premium</div>
+      </div>
+      <div class="ubod">
+        <div class="un">Cremona Vivace</div>
+        <div class="ucl">Cluster Cremona</div>
+        <div class="usp">
+          <span>🛏 4 KT</span><span>🚿 3 KM</span><span>📐 LT 120m²</span><span>🏠 LB 180m²</span>
+        </div>
+        <div class="up">Rp 2,2 Miliar<span class="upl">Stok sangat terbatas</span></div>
+      </div>
+    </div>
+    <div class="uc">
+      <div class="uiw">
+        <img class="ui" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80" alt="Alana"/>
+        <div class="ub2" style="background:var(--dark);color:var(--gold);border:1px solid rgba(201,168,76,.4)">Baru</div>
+      </div>
+      <div class="ubod">
+        <div class="un">Alana & Daisha</div>
+        <div class="ucl">Cluster Terbaru 2022</div>
+        <div class="usp">
+          <span>🛏 2–3 KT</span><span>🚿 1–2 KM</span><span>📐 LT 72m²</span><span>🏠 LB 39m²</span>
+        </div>
+        <div class="up">Rp 700Jt – 2 Miliar<span class="upl">Harga perdana rilis 2022</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FASILITAS -->
+<section id="fas">
+  <div style="text-align:center;margin-bottom:52px">
+    <p class="sl2">World-Class Amenities</p>
+    <h2 class="sh">Fasilitas Kawasan</h2>
+    <div class="sd" style="margin:0 auto"></div>
+  </div>
+  <div class="fg">
+    <div class="fc"><span class="fi">🏊</span><div class="fn">Kolam Renang</div><p class="fd">Resort-style pool untuk dewasa & anak di Family Club</p></div>
+    <div class="fc"><span class="fi">💪</span><div class="fn">Fitness Centre</div><p class="fd">Gym premium dalam Family Club kawasan</p></div>
+    <div class="fc"><span class="fi">🧖</span><div class="fn">Wellness Spa</div><p class="fd">Fasilitas spa eksklusif untuk penghuni</p></div>
+    <div class="fc"><span class="fi">🌳</span><div class="fn">Thematic Park</div><p class="fd">Taman tematik tersebar di seluruh kawasan</p></div>
+    <div class="fc"><span class="fi">🚴</span><div class="fn">Bicycle Lane</div><p class="fd">Jalur sepeda & pedestrian di sepanjang boulevard</p></div>
+    <div class="fc"><span class="fi">🛡️</span><div class="fn">Security 24 Jam</div><p class="fd">One gate system + CCTV setiap cluster</p></div>
+    <div class="fc"><span class="fi">🏬</span><div class="fn">Commercial Area</div><p class="fd">Ruko & pusat perbelanjaan dalam kawasan</p></div>
+    <div class="fc"><span class="fi">🏃</span><div class="fn">Jogging Track</div><p class="fd">Jalur lari melingkupi kawasan hijau asri</p></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="ctac">
+    <p class="sl2">Penawaran Eksklusif</p>
+    <h2 class="sh">Wujudkan Rumah<br>Impian Anda</h2>
+    <div class="sd" style="margin:0 auto 22px"></div>
+    <p class="st" style="max-width:480px;margin:0 auto;text-align:center">Konsultasikan kebutuhan properti Anda sekarang. Dapatkan harga terbaik, simulasi KPR, dan jadwal kunjungan show unit.</p>
+    <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20tertarik%20dengan%20CitraLand%20Puri%20Serang.%20Boleh%20minta%20info%20terbaru%3F" class="wa" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Sekarang
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fg2">
+    <div>
+      <span class="flogo">CitraLand Puri Serang</span>
+      <p class="fdesc">Jl. Lingkar Selatan No. 2-3, Kel. Serang, Kec. Serang, Kota Serang, Banten 42116.<br>Telp: 0254-213888 · citralandpuriserang@gmail.com</p>
+    </div>
+    <div>
+      <div class="fh">Navigasi</div>
+      <ul class="fl">
+        <li><a href="#tour">Virtual Tour 360°</a></li>
+        <li><a href="#units">Tipe Unit</a></li>
+        <li><a href="#fas">Fasilitas</a></li>
+        <li><a href="#cta">Hubungi Agen</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fh">Link Resmi</div>
+      <ul class="fl">
+        <li><a href="https://www.citralandpuriserang.com" target="_blank">Website Resmi</a></li>
+        <li><a href="https://atlasvirtual.id/tour/citraland-somerset/" target="_blank">Atlas Virtual Tour</a></li>
+        <li><a href="https://wa.me/6281234567890">WhatsApp Agen</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fb">
+    <span>© 2026 CitraLand Puri Serang. Halaman Afiliasi.</span>
+    <em>✦ Powered by Atlas Reality × Ciputra Group</em>
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<a class="waf" href="https://wa.me/6281234567890" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// NAV SCROLL
+window.addEventListener('scroll',()=>{
+  document.getElementById('nb').classList.toggle('s',scrollY>60);
+});
+
+// HERO ZOOM
+setTimeout(()=>document.getElementById('hbg').classList.add('z'),100);
+
+// 360 SCENES — Equirectangular panorama publik berkualitas tinggi
+const scenes={
+  living:{
+    label:'Ruang Tamu · Florentyn',
+    img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=4000&q=90'
+  },
+  bedroom:{
+    label:'Kamar Utama · Florentyn',
+    img:'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=4000&q=90'
+  },
+  kitchen:{
+    label:'Dapur & Dining · Florentyn',
+    img:'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=4000&q=90'
+  },
+  outdoor:{
+    label:'Eksterior & Taman · Florentyn',
+    img:'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=4000&q=90'
+  }
+};
+
+let viewer=null;
+
+function initPannellum(sceneKey){
+  const s=scenes[sceneKey];
+  document.getElementById('rlabel').textContent=s.label;
+  if(viewer){try{viewer.destroy()}catch(e){}}
+  viewer=pannellum.viewer('pv',{
+    type:'equirectangular',
+    panorama:s.img,
+    autoLoad:true,
+    autoRotate:-1.2,
+    autoRotateInactivityDelay:4000,
+    showControls:true,
+    showZoomCtrl:true,
+    showFullscreenCtrl:true,
+    hfov:95,
+    minHfov:40,
+    maxHfov:120,
+    pitch:3,
+    strings:{
+      loadButtonLabel:'Klik untuk Memuat Tour 360°',
+      loadingLabel:'Memuat Panorama...'
+    }
+  });
+}
+
+function loadScene(key,btn){
+  document.querySelectorAll('.tt').forEach(t=>t.classList.remove('a'));
+  btn.classList.add('a');
+  document.getElementById('pv-wrap').style.display='block';
+  document.getElementById('atlas-section').style.display='none';
+  initPannellum(key);
+}
+
+function showYT(){
+  document.querySelectorAll('.tt').forEach(t=>t.classList.remove('a'));
+  document.querySelectorAll('.tt')[4].classList.add('a');
+  document.getElementById('pv-wrap').style.display='none';
+  const as=document.getElementById('atlas-section');
+  as.style.display='block';
+  const fr=document.getElementById('yt-frame');
+  if(!fr.src){fr.src=fr.dataset.src;}
+}
+
+function showPannellum(){
+  document.querySelectorAll('.tt')[0].classList.add('a');
+  document.querySelectorAll('.tt')[4].classList.remove('a');
+  document.getElementById('pv-wrap').style.display='block';
+  document.getElementById('atlas-section').style.display='none';
+  initPannellum('living');
+}
+
+// AUTO INIT
+initPannellum('living');
+</script>
+</body>
+</html>
