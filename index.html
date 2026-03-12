@@ -3,303 +3,619 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-
   <title>Cluster Cremona – Tipe Vivace | CitraLand Puri Serang</title>
-  <meta name="description" content="Landing page afiliasi premium untuk Cluster Cremona – Tipe Vivace di CitraLand Puri Serang. Rumah 2 lantai bersertifikasi EDGE dengan gate eksklusif, taman hijau, dan virtual tour 360° tiap ruangan. Semua leads diarahkan ke Google Form resmi CitraLand." />
-
-  <!-- Favicon -->
+  <meta name="description" content="Landing page afiliasi premium Cluster Cremona Tipe Vivace, CitraLand Puri Serang. Rumah 2 lantai EDGE Green Building, virtual tour 360°, dan form minat resmi." />
   <link rel="icon" type="image/png" href="FAVICON_URL" />
   <link rel="apple-touch-icon" href="FAVICON_URL" />
+  <meta property="og:title" content="Cluster Cremona – Tipe Vivace | CitraLand Puri Serang" />
+  <meta property="og:description" content="Rumah mewah 2 lantai bersertifikasi EDGE. Virtual tour 360° dan form minat resmi CitraLand Puri Serang." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1600607687920-4e2a534a9edc?w=1200&q=80" />
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-
-  <!-- Pannellum -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
   <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
 
   <style>
     :root {
-      /* Disesuaikan ke nuansa CitraLand: hijau‑kebiruan + emas lembut */
-      --bg: #0e1417;             /* dark slate hijau */
-      --bg-soft: #151b1f;
-      --bg-card: #171e23;
-      --surface: #f5f3eb;
-      --surface-soft: #e1ded4;
-      --primary: #d4b06a;        /* emas lembut */
-      --primary-soft: rgba(212,176,106,0.2);
-      --accent: #1f7f72;         /* hijau kebiruan CitraLand feel */
-      --accent-soft: rgba(31,127,114,0.22);
-      --text-main: #f7f4ec;
-      --text-muted: #a0a5b0;
-      --text-soft: #c4c7d2;
-      --border-subtle: rgba(255,255,255,0.08);
-      --radius-lg: 18px;
-      --radius-md: 12px;
-      --radius-pill: 999px;
-      --shadow-soft: 0 24px 70px rgba(0,0,0,0.85);
-      --max-width: 1120px;
-      --nav-height: 64px;
-      --bottom-nav-height: 64px;
-      --transition-fast: 0.18s ease-out;
+      --bg:            #0e1417;
+      --bg-soft:       #151b1f;
+      --bg-card:       #171e23;
+      --surface:       #f5f3eb;
+      --surface-soft:  #e1ded4;
+      --primary:       #d4b06a;
+      --primary-soft:  rgba(212,176,106,0.18);
+      --accent:        #1f7f72;
+      --accent-soft:   rgba(31,127,114,0.2);
+      --text-main:     #f7f4ec;
+      --text-muted:    #a0a5b0;
+      --text-soft:     #c4c7d2;
+      --border:        rgba(255,255,255,0.07);
+      --radius-lg:     18px;
+      --radius-md:     12px;
+      --radius-pill:   999px;
+      --shadow:        0 24px 70px rgba(0,0,0,0.85);
+      --max-w:         1080px;
+      --nav-h:         60px;
+      --bot-h:         66px;
+      --t:             0.18s ease-out;
     }
 
-    * { margin:0; padding:0; box-sizing:border-box; }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
     html { scroll-behavior:smooth; }
-
     body {
-      background: radial-gradient(circle at top, #1c2429 0, #0e1417 50%, #050708 100%);
+      background: radial-gradient(circle at top, #1c2429 0%, #0e1417 50%, #050708 100%);
       color: var(--text-main);
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: "Inter", system-ui, sans-serif;
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
-      padding-bottom: var(--bottom-nav-height);
+      padding-bottom: var(--bot-h);
     }
-
     img { max-width:100%; display:block; }
     a { color:inherit; text-decoration:none; }
+    .container { width:100%; max-width:var(--max-w); margin:0 auto; padding:0 16px; }
 
-    .container {
-      width:100%;
-      max-width:var(--max-width);
-      margin:0 auto;
-      padding:0 16px;
+    /* ─── HEADER (logo only, no menu) ─── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      height: var(--nav-h);
+      backdrop-filter: blur(18px);
+      background: rgba(9,13,16,0.96);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-mark {
+      width: 32px; height: 32px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 30% 0,#fdf3dc,#d4b06a 55%,#986337 100%);
+      padding: 3px;
+      box-shadow: 0 0 16px rgba(212,176,106,0.6);
+    }
+    .brand-mark-inner {
+      width:100%; height:100%;
+      border-radius: inherit;
+      background: #0c1013 url('FAVICON_URL') center/70% no-repeat;
+    }
+    .brand-text {
+      font-family: "Cormorant Garamond", serif;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 11px;
+      color: #8f949e;
+      line-height: 1.3;
+    }
+    .brand-text span { color: var(--text-main); }
+    .nav-cta {
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(212,176,106,0.7);
+      background: linear-gradient(120deg,#f4e3bf,#d4b06a 45%,#b58345 100%);
+      color: #281507;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform var(--t), filter var(--t);
+    }
+    .nav-cta:hover { transform: translateY(-1px); filter: brightness(1.04); }
+
+    /* ─── SECTION SKELETON ─── */
+    .section { padding: 28px 0; }
+    .section-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .section-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.35rem,3vw,1.65rem);
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+    .section-sub {
+      font-size: 14px;
+      color: var(--text-soft);
+      max-width: 500px;
+    }
+    .section-header { margin-bottom: 18px; }
+
+    /* ─── CARD ─── */
+    .card {
+      border-radius: var(--radius-lg);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 18px;
+      box-shadow: var(--shadow);
     }
 
-    /* NAV (Home, Tour, Kawasan, Form) */
-    header.nav {
-      position:sticky;
-      top:0;
-      z-index:40;
-      backdrop-filter:blur(16px);
-      background:rgba(9,13,16,0.96);
-      border-bottom:1px solid rgba(255,255,255,0.06);
+    /* ─── HERO ─── */
+    .hero { padding: 24px 0 20px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1.05fr) minmax(0,0.95fr);
+      gap: 22px;
+      align-items: center;
     }
-    .nav-inner{
-      height:var(--nav-height);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+
+    /* affiliate pill */
+    .aff-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--accent-soft);
+      background: rgba(8,22,20,0.9);
+      color: #5fd4c5;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
+    .aff-pill svg { width:13px; height:13px; stroke:#5fd4c5; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 4px 12px 4px 4px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(212,176,106,0.35);
+      background: #151b1f;
+      margin-bottom: 10px;
     }
-    .brand-mark{
-      width:30px;height:30px;
-      border-radius:12px;
-      background:radial-gradient(circle at 30% 0,#fdf3dc,#d4b06a 55%,#986337 100%);
-      padding:3px;
-      box-shadow:0 0 16px rgba(212,176,106,0.6);
+    .badge-dot {
+      width:16px; height:16px;
+      border-radius:999px;
+      background: radial-gradient(circle at 30% 0,#1f7f72,#d4b06a);
+      padding: 3px;
     }
-    .brand-mark-inner{
-      width:100%;height:100%;
-      border-radius:inherit;
-      background:#0c1013 url('FAVICON_URL') center/70% no-repeat;
+    .badge-dot-inner {
+      width:100%; height:100%;
+      border-radius: inherit;
+      background: #0e1417;
     }
-    .brand-text{
-      font-family:"Cormorant Garamond",serif;
-      text-transform:uppercase;
-      letter-spacing:0.16em;
+    .badge-text { font-size:11px; letter-spacing:0.15em; text-transform:uppercase; }
+
+    .hero-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.1rem,4.2vw,2.7rem);
+      line-height: 1.05;
+      margin-bottom: 10px;
+    }
+    .hero-title span { color: var(--primary); }
+    .hero-sub { font-size:15px; color:var(--text-soft); max-width:480px; margin-bottom:14px; }
+
+    .hero-tags { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+    .hero-tag {
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.07);
+      background: #171d21;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .hero-tag strong { color: var(--primary); }
+
+    .hero-cta-col { display:flex; flex-direction:column; gap:8px; max-width:380px; margin-bottom:16px; }
+    .btn-primary {
+      width: 100%;
+      border-radius: var(--radius-pill);
+      padding: 12px 18px;
+      border: none;
+      background: linear-gradient(110deg,#f4e3bf,#d4b06a 50%,#b58345 100%);
+      color: #281507;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.9);
+      transition: transform var(--t), filter var(--t);
+    }
+    .btn-primary:hover { transform:translateY(-1px); filter:brightness(1.04); }
+    .btn-secondary {
+      border-radius: var(--radius-pill);
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: #171d21;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: background var(--t), border-color var(--t), color var(--t);
+    }
+    .btn-secondary svg { width:16px; height:16px; stroke:var(--primary); }
+    .btn-secondary:hover { background:#1e252b; border-color:rgba(212,176,106,0.6); color:var(--text-main); }
+
+    .hero-stats { display:flex; flex-wrap:wrap; gap:18px; margin-bottom:16px; }
+    .stat-item { display:flex; flex-direction:column; }
+    .stat-label { font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#8f949e; }
+    .stat-value { font-size:14px; color:var(--text-main); font-weight:500; }
+    .stat-em { font-size:12px; color:#8bf5da; }
+
+    /* affiliate funnel bar */
+    .funnel {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: var(--radius-md);
+      background: #131a1e;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .funnel-steps {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .f-step {
+      flex: 1;
+      text-align: center;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 5px 6px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.07);
+      color: var(--text-muted);
+      background: #151b1f;
+      transition: background var(--t), border-color var(--t), color var(--t);
+    }
+    .f-step.done {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      color: #8bf5da;
+    }
+    .funnel-track {
+      height: 4px;
+      border-radius: 999px;
+      background: #1e262b;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+    .funnel-fill {
+      height: 100%;
+      width: 33%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--primary));
+      transition: width 0.3s ease-out;
+    }
+    .funnel-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .funnel-meta strong { color: #8bf5da; }
+
+    /* HERO MEDIA */
+    .hero-media {
+      border-radius: 22px;
+      background: var(--surface-soft);
+      padding: 10px;
+      border: 1px solid rgba(212,176,106,0.45);
+      box-shadow: var(--shadow);
+    }
+    .hero-img-wrap {
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      background: #000;
+    }
+    .hero-img-wrap img {
+      width: 100%;
+      transform: scale(1.02);
+      transform-origin: center;
+      transition: transform 8s ease-out;
+    }
+    .hero-img-wrap:hover img { transform: scale(1.065); }
+    .hero-img-over {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 10px 12px;
+      background: linear-gradient(to top,rgba(0,0,0,0.82),transparent);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 8px;
+    }
+    .img-cap { max-width:68%; }
+    .img-cap-label { font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(248,244,232,0.85); }
+    .img-cap-text { font-size:12px; color:rgba(248,244,232,0.92); }
+    .img-badge {
       font-size:11px;
-      color:#8f949e;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(0,0,0,0.85);
+      border: 1px solid rgba(212,176,106,0.7);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
     }
-    .brand-text span{ color:var(--text-main); }
+    .img-badge svg { width:13px; height:13px; stroke:var(--primary); }
 
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:18px;
+    /* STATS STRIP (interaktif) */
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 10px;
+      margin-top: 14px;
     }
-    .nav-links a{
-      font-size:11px;
-      text-transform:uppercase;
-      letter-spacing:0.14em;
-      color:var(--text-muted);
-      padding:3px 0;
-      position:relative;
-      transition:color var(--transition-fast);
+    .stat-card {
+      padding: 10px 12px;
+      border-radius: var(--radius-md);
+      background: #131a1e;
+      border: 1px solid rgba(255,255,255,0.06);
+      cursor: pointer;
+      transition: background var(--t), border-color var(--t), transform var(--t);
     }
-    .nav-links a::after{
-      content:"";
-      position:absolute;
-      left:0;bottom:-3px;
-      width:0;height:2px;
-      background:linear-gradient(90deg,#d4b06a,#1f7f72);
-      transition:width .18s ease-out;
+    .stat-card:hover {
+      background: #1b2429;
+      border-color: var(--accent-soft);
+      transform: translateY(-2px);
     }
-    .nav-links a:hover::after{ width:100%; }
-    .nav-links a.active{
-      color:var(--text-main);
-    }
-    .nav-links a.active::after{ width:100%; }
+    .sc-label { font-size:11px; text-transform:uppercase; letter-spacing:0.13em; color:var(--text-muted); margin-bottom:3px; }
+    .sc-val { font-size:14px; color:var(--text-main); font-weight:500; }
+    .sc-note { font-size:11px; color:var(--text-muted); }
 
-    .nav-cta{
-      padding:8px 16px;
+    /* TOUR */
+    .tour-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+    .tour-title-row { font-size:14px; font-weight:500; display:flex; align-items:center; gap:6px; }
+    .tour-title-row svg { width:16px; height:16px; stroke:var(--primary); }
+    .tour-pill {
+      font-size:11px; padding:4px 10px;
       border-radius:var(--radius-pill);
-      border:1px solid rgba(212,176,106,0.7);
-      background:linear-gradient(120deg,#f4e3bf,#d4b06a 45%,#b58345 100%);
+      border:1px solid rgba(212,176,106,0.4);
+      background:#171d21;
+      color:var(--primary);
+      letter-spacing:0.15em;
+      text-transform:uppercase;
+    }
+    .tour-tabs { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px; }
+    .t-tab {
+      flex: 1 1 70px;
+      padding: 7px 8px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.07);
+      background: #171d21;
+      font-size: 12px;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: background var(--t), border-color var(--t), color var(--t);
+    }
+    .t-tab svg { width:14px; height:14px; stroke:var(--text-muted); }
+    .t-tab.active {
+      border-color: rgba(212,176,106,0.9);
+      background: radial-gradient(circle at 0 0,rgba(212,176,106,0.3),#101519 90%);
+      color: var(--text-main);
+    }
+    .t-tab.active svg { stroke:var(--primary); }
+
+    #tour360-wrap {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: #000;
+    }
+    #tour360 { width:100%; height:290px; }
+    .t-label {
+      position: absolute;
+      left: 10px; top: 10px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(9,12,20,0.9);
+      border: 1px solid rgba(212,176,106,0.7);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+    .t-tip {
+      position: absolute;
+      right: 10px; bottom: 10px;
+      padding: 5px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(0,0,0,0.9);
+      font-size: 11px;
+      color: #f0ede4;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .t-tip svg { width:13px; height:13px; stroke:var(--primary); }
+    #videoWrap { display:none; margin-top:8px; border-radius:14px; overflow:hidden; border:1px solid var(--border); }
+    #atlasVideo { width:100%; height:240px; border:0; }
+    .tour-footer {
+      margin-top:10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .tour-footer button {
+      border-radius: var(--radius-pill);
+      padding: 7px 12px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: #171d21;
+      color: var(--primary);
+      font-size: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background var(--t), border-color var(--t), transform var(--t);
+    }
+    .tour-footer button:hover { background:#1f272d; border-color:rgba(212,176,106,0.7); transform:translateY(-1px); }
+
+    /* KAWASAN GALLERY */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 14px;
+    }
+    .g-main { border-radius:var(--radius-lg); overflow:hidden; position:relative; }
+    .g-main img { width:100%; height:100%; object-fit:cover; }
+    .g-label {
+      position:absolute; left:10px; bottom:10px;
+      padding:5px 12px; border-radius:var(--radius-pill);
+      background:rgba(0,0,0,0.82); font-size:12px; color:var(--surface);
+    }
+    .g-side { display:grid; grid-template-rows:1fr 1fr; gap:10px; }
+    .g-card { border-radius:var(--radius-lg); overflow:hidden; position:relative; }
+    .g-card img { width:100%; height:100%; object-fit:cover; }
+    .g-card-label {
+      position:absolute; left:10px; bottom:10px;
+      padding:4px 10px; border-radius:var(--radius-pill);
+      background:rgba(0,0,0,0.82); font-size:12px; color:var(--surface);
+    }
+
+    /* SPESIFIKASI */
+    .spec-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-top:12px; }
+    .spec-item {
+      padding:10px 12px;
+      border-radius:var(--radius-md);
+      background:linear-gradient(135deg,rgba(212,176,106,0.1),rgba(14,18,22,1));
+      border:1px solid rgba(212,176,106,0.22);
+    }
+    .spec-label { font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#8f949e; margin-bottom:3px; }
+    .spec-val { font-size:14px; font-weight:500; }
+    .spec-note { font-size:12px; color:var(--text-muted); }
+    .price-box {
+      margin-top:12px; padding:12px 14px;
+      border-radius:var(--radius-md);
+      background:linear-gradient(115deg,rgba(212,176,106,0.28),rgba(184,131,69,0.18));
+      border:1px solid rgba(212,176,106,0.6);
+    }
+    .price-label { font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#3a2814; }
+    .price-main { font-size:20px; font-weight:600; color:#1f130a; }
+    .price-sub { font-size:12px; color:#3d2a15; margin-top:2px; }
+
+    /* KPR CALCULATOR */
+    .kpr-calc {
+      margin-top:12px;
+      padding:14px;
+      border-radius:var(--radius-md);
+      background:#131a1e;
+      border:1px solid rgba(255,255,255,0.06);
+    }
+    .kpr-title { font-size:12px; font-weight:600; color:var(--text-soft); margin-bottom:10px; display:flex; align-items:center; gap:6px; }
+    .kpr-title svg { width:15px; height:15px; stroke:var(--accent); }
+    .kpr-row { display:flex; flex-direction:column; gap:6px; }
+    .kpr-field { display:flex; flex-direction:column; gap:3px; }
+    .kpr-field-label { font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); }
+    .kpr-field input, .kpr-field select {
+      width:100%;
+      padding:8px 10px;
+      border-radius:var(--radius-md);
+      background:#1b2328;
+      border:1px solid rgba(255,255,255,0.1);
+      color:var(--text-main);
+      font-size:13px;
+      outline:none;
+      transition:border-color var(--t);
+    }
+    .kpr-field input:focus, .kpr-field select:focus { border-color:var(--accent); }
+    .kpr-fields-row { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+    .kpr-result {
+      margin-top:8px;
+      padding:10px 12px;
+      border-radius:var(--radius-md);
+      background:rgba(31,127,114,0.15);
+      border:1px solid rgba(31,127,114,0.45);
+      font-size:13px;
+      color:var(--text-main);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+    .kpr-result-val { font-size:18px; font-weight:600; color:#8bf5da; }
+    .kpr-btn {
+      margin-top:8px;
+      border-radius:var(--radius-pill);
+      padding:9px 14px;
+      border:none;
+      background:linear-gradient(110deg,#f4e3bf,#d4b06a 50%,#b58345 100%);
       color:#281507;
-      font-size:11px;
+      font-size:12px;
       font-weight:600;
       letter-spacing:0.16em;
       text-transform:uppercase;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
       cursor:pointer;
-      box-shadow:0 16px 46px rgba(0,0,0,0.85);
-      transition:transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
-    }
-    .nav-cta span{ font-size:14px; }
-    .nav-cta:hover{
-      transform:translateY(-1px);
-      box-shadow:0 20px 60px rgba(0,0,0,0.95);
-      filter:brightness(1.02);
-    }
-
-    .nav-burger{
-      display:none;
-      width:32px;height:32px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,0.25);
-      background:rgba(10,12,15,0.96);
-      align-items:center;
-      justify-content:center;
-      cursor:pointer;
-    }
-    .nav-burger-line{
-      width:16px;height:2px;
-      border-radius:999px;
-      background:#f5f0e1;
-      position:relative;
-    }
-    .nav-burger-line::before,
-    .nav-burger-line::after{
-      content:"";
-      position:absolute;
-      left:0;
-      width:16px;height:2px;
-      border-radius:999px;
-      background:#f5f0e1;
-    }
-    .nav-burger-line::before{ top:-5px; }
-    .nav-burger-line::after{ top:5px; }
-
-    .nav-links-mobile{
-      display:none;
-      flex-direction:column;
-      gap:10px;
-      padding:10px 16px 14px;
-      background:rgba(9,11,14,0.98);
-      border-top:1px solid rgba(255,255,255,0.06);
-    }
-    .nav-links-mobile a{
-      font-size:12px;
-      text-transform:uppercase;
-      letter-spacing:0.18em;
-      color:var(--text-muted);
-      padding:4px 0;
-    }
-
-    /* HERO + AFFILIATE BADGE + FUNNEL BAR */
-    .hero{
-      padding:24px 0 22px;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr);
-      gap:24px;
-      align-items:center;
-    }
-
-    .hero-badge{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:4px 12px 4px 4px;
-      border-radius:var(--radius-pill);
-      border:1px solid rgba(212,176,106,0.4);
-      background:#151b1f;
-      margin-bottom:10px;
-    }
-    .hero-badge-dot{
-      width:16px;height:16px;
-      border-radius:999px;
-      background:radial-gradient(circle at 30% 0,#1f7f72,#d4b06a);
-      padding:3px;
-    }
-    .hero-badge-dot-inner{
-      width:100%;height:100%;
-      border-radius:inherit;
-      background:#0e1417;
-    }
-    .hero-badge-text{
-      font-size:11px;
-      letter-spacing:0.16em;
-      text-transform:uppercase;
-    }
-
-    /* affiliate badge */
-    .affiliate-pill{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:4px 10px;
-      border-radius:var(--radius-pill);
-      border:1px solid var(--accent-soft);
-      background:rgba(8,22,20,0.9);
-      color:var(--accent);
-      font-size:11px;
-      margin-bottom:8px;
-    }
-    .affiliate-pill svg{
-      width:14px;height:14px;
-      stroke:var(--accent);
-    }
-
-    .hero-title{
-      font-family:"Cormorant Garamond",serif;
-      font-size:clamp(2.25rem,4.2vw,2.7rem);
-      line-height:1.05;
-      margin-bottom:10px;
-    }
-    .hero-title span{ color:var(--primary); }
-
-    .hero-sub{
-      font-size:15px;
-      color:var(--text-soft);
-      max-width:480px;
-      margin-bottom:14px;
-    }
-
-    .hero-tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-bottom:16px;
-    }
-    .hero-tag{
-      padding:4px 10px;
-      border-radius:var(--radius-pill);
-      border:1px solid rgba(255,255,255,0.08);
-      background:#171d21;
-      font-size:12px;
-      color:var(--text-muted);
-    }
-    .hero-tag strong{ color:var(--primary); }
-
-    .hero-cta-row{
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      margin-bottom:14px;
-      max-width:380px;
-    }
-    .hero-cta-main{
       width:100%;
+      transition:transform var(--t), filter var(--t);
+    }
+    .kpr-btn:hover { transform:translateY(-1px); filter:brightness(1.04); }
+
+    /* LOKASI */
+    .loc-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:16px; align-items:start; }
+    .loc-list { list-style:none; margin-top:10px; font-size:13px; color:var(--text-muted); }
+    .loc-list li { display:flex; justify-content:space-between; border-bottom:1px dashed rgba(255,255,255,0.07); padding:7px 0; }
+    .loc-time { font-size:12px; color:var(--primary); }
+    .map-wrap { border-radius:var(--radius-md); border:1px solid rgba(255,255,255,0.08); overflow:hidden; }
+    .map-wrap iframe { width:100%; height:220px; border:0; filter:grayscale(0.2) contrast(1.05); }
+
+    /* FORM CTA */
+    .cta-section { padding:28px 0 32px; }
+    .cta-card {
+      border-radius:22px;
+      background:linear-gradient(135deg,#f5f3eb 0,#e1ded4 18%,#10161a 55%,#0e1315 100%);
+      border:1px solid rgba(212,176,106,0.55);
+      padding:20px 20px 18px;
+      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);
+      gap:20px;
+      align-items:center;
+    }
+    .cta-kicker { font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#322010; margin-bottom:4px; }
+    .cta-title { font-family:"Cormorant Garamond",serif; font-size:22px; color:#21160b; margin-bottom:6px; }
+    .cta-body { font-size:14px; color:#3a2817; max-width:460px; margin-bottom:12px; }
+    .cta-agent { display:flex; align-items:center; gap:10px; }
+    .cta-avatar { width:40px; height:40px; border-radius:999px; overflow:hidden; border:2px solid rgba(255,255,255,0.95); }
+    .cta-agent-info { font-size:12px; color:#281c0f; }
+    .cta-agent-name { font-weight:600; }
+    .cta-agent-role { color:#4a3219; }
+    .cta-actions { display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+    .cta-main-btn {
       border-radius:var(--radius-pill);
       padding:11px 18px;
       border:none;
@@ -311,329 +627,759 @@
       text-transform:uppercase;
       display:inline-flex;
       align-items:center;
-      justify-content:center;
       gap:8px;
       cursor:pointer;
-      box-shadow:0 18px 52px rgba(0,0,0,0.9);
-      transition:transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+      box-shadow:0 16px 48px rgba(0,0,0,0.95);
+      transition:transform var(--t), filter var(--t);
     }
-    .hero-cta-main span{ font-size:16px; }
+    .cta-main-btn:hover { transform:translateY(-1px); filter:brightness(1.04); }
+    .cta-note { font-size:12px; color:#3a2817; max-width:240px; text-align:right; }
 
-    .hero-cta-main:hover{
-      transform:translateY(-1px);
-      box-shadow:0 24px 70px rgba(0,0,0,1);
-      filter:brightness(1.03);
+    /* POPUP AFTER FORM CLICK */
+    .popup-overlay {
+      display:none;
+      position:fixed;
+      inset:0;
+      z-index:80;
+      background:rgba(0,0,0,0.7);
+      backdrop-filter:blur(6px);
+      align-items:center;
+      justify-content:center;
+      padding:16px;
     }
-
-    .hero-cta-secondary{
+    .popup-overlay.show { display:flex; }
+    .popup-box {
+      background:#171e23;
+      border:1px solid rgba(212,176,106,0.5);
+      border-radius:22px;
+      padding:24px 20px 20px;
+      max-width:380px;
+      width:100%;
+      box-shadow:var(--shadow);
+      text-align:center;
+      position:relative;
+    }
+    .popup-icon {
+      width:52px;height:52px;
+      border-radius:999px;
+      background:var(--accent-soft);
+      border:1px solid var(--accent);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:0 auto 12px;
+    }
+    .popup-icon svg { width:24px; height:24px; stroke:#8bf5da; }
+    .popup-title { font-family:"Cormorant Garamond",serif; font-size:20px; margin-bottom:6px; }
+    .popup-body { font-size:14px; color:var(--text-soft); margin-bottom:16px; }
+    .popup-steps { list-style:none; text-align:left; margin-bottom:16px; }
+    .popup-steps li {
+      display:flex; gap:10px; align-items:flex-start;
+      font-size:13px; color:var(--text-soft);
+      padding:6px 0;
+      border-bottom:1px dashed rgba(255,255,255,0.07);
+    }
+    .popup-steps li:last-child { border-bottom:none; }
+    .popup-step-num {
+      width:22px; height:22px; border-radius:999px; flex-shrink:0;
+      background:var(--accent-soft); border:1px solid var(--accent);
+      display:flex; align-items:center; justify-content:center;
+      font-size:11px; color:#8bf5da; font-weight:600;
+    }
+    .popup-close {
       border-radius:var(--radius-pill);
       padding:9px 14px;
       border:1px solid rgba(255,255,255,0.18);
-      background:#171d21;
-      font-size:12px;
-      letter-spacing:0.14em;
-      text-transform:uppercase;
+      background:#1f272d;
       color:var(--text-muted);
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
+      font-size:12px;
       cursor:pointer;
-    }
-    .hero-cta-secondary svg{
-      width:16px;height:16px;
-      stroke:var(--primary);
-    }
-
-    .hero-info-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:18px;
-      font-size:12px;
-      color:var(--text-muted);
-    }
-
-    /* affiliate funnel bar */
-    .funnel-bar{
-      margin-top:14px;
-      padding:10px 12px;
-      border-radius:var(--radius-md);
-      background:#151b1f;
-      border:1px solid rgba(255,255,255,0.05);
-      font-size:12px;
-      color:var(--text-soft);
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-    }
-    .funnel-steps{
-      display:flex;
-      gap:6px;
-      font-size:11px;
-      text-transform:uppercase;
       letter-spacing:0.12em;
-      color:var(--text-muted);
+      text-transform:uppercase;
+      transition:background var(--t), color var(--t);
     }
-    .funnel-step{
-      flex:1;
-      padding:4px 6px;
-      border-radius:var(--radius-pill);
-      background:#151b1f;
-      text-align:center;
-      border:1px solid rgba(255,255,255,0.06);
+    .popup-close:hover { background:#27313a; color:var(--text-main); }
+
+    /* FOOTER */
+    footer {
+      border-top:1px solid rgba(255,255,255,0.08);
+      padding:14px 0 18px;
     }
-    .funnel-step.active{
-      background:var(--accent-soft);
-      border-color:var(--accent);
-      color:var(--text-main);
-    }
-    .funnel-progress{
-      height:4px;
-      border-radius:999px;
-      background:#22272d;
-      overflow:hidden;
-    }
-    .funnel-progress-inner{
-      width:33%;
-      height:100%;
-      background:linear-gradient(90deg,var(--accent),var(--primary));
-      transition:width .25s ease-out;
-    }
-    .funnel-meta{
+    .footer-row {
       display:flex;
       justify-content:space-between;
-      font-size:11px;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      font-size:12px;
       color:var(--text-muted);
     }
-    .funnel-meta strong{ color:var(--accent); }
+    .footer-links { display:flex; gap:12px; flex-wrap:wrap; }
+    .footer-links a { text-decoration:underline; text-underline-offset:3px; }
 
-    /* HERO MEDIA, SECTION, TOUR, KAWASAN, CTA, BOTTOM NAV, SCROLL REVEAL – 
-       SAMA dengan versi sebelumnya yang sudah kamu punya, 
-       HANYA WARNA YANG SESUAI VARIABLE BARU DI ATAS. 
-       (Untuk singkatnya tidak diulang semua di sini.) */
+    /* BOTTOM NAV (Home, Tour, Kawasan, Form) */
+    .bottom-nav {
+      position:fixed;
+      left:0; right:0; bottom:0;
+      z-index:50;
+      height:var(--bot-h);
+      background:rgba(9,13,16,0.97);
+      border-top:1px solid rgba(255,255,255,0.14);
+      backdrop-filter:blur(20px);
+      display:flex;
+      align-items:center;
+      justify-content:space-around;
+      padding-bottom:env(safe-area-inset-bottom);
+    }
+    .bn-item {
+      flex:1;
+      min-height:44px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:2px;
+      font-size:11px;
+      letter-spacing:0.13em;
+      text-transform:uppercase;
+      color:var(--text-muted);
+      cursor:pointer;
+      transition:color var(--t);
+    }
+    .bn-icon {
+      width:26px; height:26px;
+      border-radius:10px;
+      display:flex; align-items:center; justify-content:center;
+      background:transparent;
+      transition:background var(--t);
+    }
+    .bn-icon svg { width:19px; height:19px; stroke:var(--text-muted); transition:stroke var(--t); }
+    .bn-item.active { color:var(--primary); }
+    .bn-item.active .bn-icon { background:var(--primary-soft); }
+    .bn-item.active .bn-icon svg { stroke:var(--primary); }
 
-    /* ---- COPY SEMUA STYLE LAINNYA DARI VERSI SEBELUMNYA TANPA DIUBAH ---- */
+    /* SCROLL REVEAL */
+    .reveal { opacity:0; transform:translateY(22px); transition:opacity .48s ease-out, transform .48s ease-out; }
+    .reveal.show { opacity:1; transform:none; }
+    .reveal-delay-1 { transition-delay:.08s; }
+    .reveal-delay-2 { transition-delay:.16s; }
+    .reveal-delay-3 { transition-delay:.24s; }
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .hero-grid { grid-template-columns:1fr; }
+      .hero-media { order:-1; }
+      .loc-grid { grid-template-columns:1fr; }
+      .cta-card { grid-template-columns:1fr; }
+      .cta-actions { align-items:flex-start; }
+      .gallery-grid { grid-template-columns:1fr; }
+      .stats-strip { grid-template-columns:1fr 1fr; }
+    }
+    @media(max-width:600px){
+      body { font-size:15px; }
+      #tour360 { height:230px; }
+      .hero-title { font-size:clamp(1.9rem,7vw,2.5rem); }
+      .spec-grid { grid-template-columns:1fr; }
+      .stats-strip { grid-template-columns:1fr; }
+      .kpr-fields-row { grid-template-columns:1fr; }
+    }
   </style>
 </head>
 <body>
-  <header class="nav">
+
+  <!-- HEADER (logo + CTA only) -->
+  <header>
     <div class="container nav-inner">
       <div class="brand">
         <div class="brand-mark"><div class="brand-mark-inner"></div></div>
-        <div class="brand-text">CitraLand <span>Cluster Cremona</span></div>
+        <div class="brand-text">CitraLand<br /><span>Cluster Cremona</span></div>
       </div>
-      <nav class="nav-links" aria-label="Navigasi utama">
-        <a href="#hero" class="active">Home</a>
-        <a href="#tour">Tour</a>
-        <a href="#gallery">Kawasan</a>
-        <a href="#cta">Form</a>
-      </nav>
-      <button class="nav-burger" aria-label="Menu" onclick="toggleMobileNav()">
-        <div class="nav-burger-line"></div>
-      </button>
-      <button class="nav-cta" onclick="goForm()">
+      <button class="nav-cta" onclick="goForm('header')">
         Isi Form Minat <span>➜</span>
       </button>
-    </div>
-    <div id="navMobile" class="nav-links-mobile">
-      <a href="#hero" onclick="closeMobileNav()">Home</a>
-      <a href="#tour" onclick="closeMobileNav()">Tour</a>
-      <a href="#gallery" onclick="closeMobileNav()">Kawasan</a>
-      <a href="#cta" onclick="closeMobileNav()">Form</a>
     </div>
   </header>
 
   <main>
-    <!-- HERO (dengan affiliate badge & funnel bar) -->
-    <section id="hero" class="hero">
-      <div class="container hero-grid">
-        <div class="reveal">
-          <div class="hero-badge">
-            <div class="hero-badge-dot"><div class="hero-badge-dot-inner"></div></div>
-            <div class="hero-badge-text">Cluster Cremona – Tipe Vivace · CitraLand Puri Serang</div>
-          </div>
 
-          <!-- BADGE AFFILIATE -->
-          <div class="affiliate-pill">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M8.25 7.5h-2.5A2.75 2.75 0 003 10.25v8A2.75 2.75 0 005.75 21h8a2.75 2.75 0 002.75-2.75v-2.5"/>
-              <path d="M9.75 14.25l8.75-8.75a1.75 1.75 0 112.5 2.5l-8.75 8.75-3.5.75.75-3.5z"/>
-            </svg>
+    <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+
+        <!-- KIRI: TEKS -->
+        <div class="reveal">
+          <div class="aff-pill">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M8.25 7.5h-2.5A2.75 2.75 0 003 10.25v8A2.75 2.75 0 005.75 21h8a2.75 2.75 0 002.75-2.75v-2.5"/><path d="M9.75 14.25l8.75-8.75a1.75 1.75 0 112.5 2.5l-8.75 8.75-3.5.75.75-3.5z"/></svg>
             Link Afiliasi Aktif · Tracking via Google Form
           </div>
 
+          <div class="hero-badge">
+            <div class="badge-dot"><div class="badge-dot-inner"></div></div>
+            <div class="badge-text">Cluster Cremona – Tipe Vivace · CitraLand Puri Serang</div>
+          </div>
+
           <h1 class="hero-title">
-            Rumah <span>Mewah</span> 2 Lantai<br />Green Building di Pusat <span>Serang</span>
+            Rumah <span>Mewah</span> 2 Lantai<br />
+            Green Building di Pusat <span>Serang</span>
           </h1>
           <p class="hero-sub">
-            Semua prospek dari halaman ini diarahkan ke Google Form resmi CitraLand Puri Serang dan ditangani langsung oleh tim pemasaran internal.
+            Landing page afiliasi premium untuk penjualan Tipe Vivace di Cluster Cremona, CitraLand Puri Serang. Semua prospek diarahkan langsung ke tim pemasaran resmi CitraLand melalui Google Form.
           </p>
 
           <div class="hero-tags">
             <div class="hero-tag"><strong>LB 110 m²</strong> · LT 96 m²</div>
-            <div class="hero-tag">4 Kamar Tidur · 3 Kamar Mandi</div>
-            <div class="hero-tag">Carport 2 mobil · Akses 2 mobil</div>
-            <div class="hero-tag"><strong>EDGE Green Building Certified</strong></div>
+            <div class="hero-tag">4 KT · 3 KM</div>
+            <div class="hero-tag">Carport 2 Mobil</div>
+            <div class="hero-tag"><strong>EDGE Green Building</strong></div>
           </div>
 
-          <div class="hero-cta-row">
-            <button class="hero-cta-main" onclick="goForm('hero')">
-              Isi Form Minat Pembelian
-              <span>➜</span>
+          <div class="hero-cta-col">
+            <button class="btn-primary" onclick="goForm('hero')">
+              Isi Form Minat Pembelian ➜
             </button>
-            <button class="hero-cta-secondary" onclick="scrollToId('tour')">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M14.752 11.168l-3.197-1.832A1 1 0 0010 10.236v3.528a1 1 0 001.555.832l3.197-1.832a1 1 0 000-1.696z"/>
-                <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
+            <button class="btn-secondary" onclick="scrollTo('tour')">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M14.752 11.168l-3.197-1.832A1 1 0 0010 10.236v3.528a1 1 0 001.555.832l3.197-1.832a1 1 0 000-1.696z"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               Lihat Virtual Tour 360°
             </button>
           </div>
 
-          <!-- FUNNEL BAR INTERAKTIF -->
-          <div class="funnel-bar" id="funnelBar">
-            <div class="funnel-steps">
-              <div class="funnel-step active" id="step-view">View</div>
-              <div class="funnel-step" id="step-tour">Tour</div>
-              <div class="funnel-step" id="step-form">Form</div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-label">Harga Mulai*</div>
+              <div class="stat-value">Rp 2,2 Miliar</div>
+              <div class="stat-em">*KPR ± Rp 8,9 jt/bulan (simulasi di form)</div>
             </div>
-            <div class="funnel-progress">
-              <div class="funnel-progress-inner" id="funnelProgress"></div>
+            <div class="stat-item">
+              <div class="stat-label">Lokasi</div>
+              <div class="stat-value">Kota Serang · Banten</div>
+              <div class="stat-em">Dekat tol Serang Barat & pusat kota</div>
+            </div>
+          </div>
+
+          <!-- FUNNEL BAR AFILIASI -->
+          <div class="funnel">
+            <div class="funnel-steps">
+              <div class="f-step done" id="fs-view">View</div>
+              <div class="f-step" id="fs-tour">Tour</div>
+              <div class="f-step" id="fs-form">Form</div>
+            </div>
+            <div class="funnel-track">
+              <div class="funnel-fill" id="funnelFill"></div>
             </div>
             <div class="funnel-meta">
-              <span>Total klik ke Form: <strong id="clickCount">0</strong></span>
-              <span>Source terakhir: <strong id="lastSource">Belum ada</strong></span>
+              <span>Klik ke Form: <strong id="clickCount">0</strong></span>
+              <span>Dari: <strong id="lastSrc">–</strong></span>
+            </div>
+          </div>
+
+          <!-- STAT CARDS (interaktif klik) -->
+          <div class="stats-strip">
+            <div class="stat-card reveal reveal-delay-1" onclick="scrollTo('tour')">
+              <div class="sc-label">Virtual Tour</div>
+              <div class="sc-val">4 Ruangan</div>
+              <div class="sc-note">Geser 360°</div>
+            </div>
+            <div class="stat-card reveal reveal-delay-2" onclick="scrollTo('kawasan')">
+              <div class="sc-label">Kawasan</div>
+              <div class="sc-val">Gate + Taman</div>
+              <div class="sc-note">Foto hyper-local</div>
+            </div>
+            <div class="stat-card reveal reveal-delay-3" onclick="goForm('stat-card')">
+              <div class="sc-label">Form Resmi</div>
+              <div class="sc-val">CitraLand</div>
+              <div class="sc-note">Langsung tim internal</div>
             </div>
           </div>
         </div>
 
-        <!-- HERO MEDIA SAMA SEPERTI VERSI TERAKHIR -->
-        <!-- ... (copy hero-media-card dari versi sebelumnya) ... -->
+        <!-- KANAN: FOTO HERO -->
+        <aside class="hero-media reveal">
+          <div class="hero-img-wrap">
+            <!-- GANTI DENGAN FOTO FASAD/GATE CREMONA ASLI -->
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a534a9edc?w=1200&q=80"
+                 alt="Fasad dan gate Cluster Cremona Tipe Vivace CitraLand Puri Serang"
+                 loading="eager" />
+            <div class="hero-img-over">
+              <div class="img-cap">
+                <div class="img-cap-label">Gate Cluster Cremona & Fasad Tipe Vivace</div>
+                <div class="img-cap-text">One gate system, security 24 jam, fasad dua lantai premium.</div>
+              </div>
+              <div class="img-badge">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 4.5l7.5 3.75v4.5c0 3.728-2.55 7.13-6.25 8.25a8.36 8.36 0 01-2.5 0C6.05 19.88 3.5 16.478 3.5 12.75v-4.5L12 4.5z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                EDGE Certified
+              </div>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <!-- TOUR, KAWASAN, SPESIFIKASI, CTA, FOOTER, BOTTOM NAV -->
-    <!-- Gunakan struktur dari versi terakhir, hanya warna mengikuti variable di atas -->
+    <!-- ═══════════════════════════════ TOUR ═══════════════════════════════ -->
+    <section id="tour" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-kicker">Virtual Tour 360°</div>
+          <h2 class="section-title">Jelajahi Tipe Vivace per Ruangan</h2>
+          <p class="section-sub">Pilih ruangan di bawah ini — setiap tab menampilkan panorama 360° yang bisa digeser dan di-zoom langsung di halaman ini.</p>
+        </div>
+        <div class="card reveal">
+          <div class="tour-header">
+            <div class="tour-title-row">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M9.75 3.5L4.5 6.25v5.5l5.25 2.75 5.25-2.75v-5.5L9.75 3.5z"/><path d="M4.5 12v5.75L9.75 21.5l5.25-3.75V12"/></svg>
+              Virtual Tour 360° – Tipe Vivace
+            </div>
+            <div class="tour-pill">5 Scene</div>
+          </div>
+
+          <div class="tour-tabs" role="tablist">
+            <button class="t-tab active" onclick="changeScene('living',this)">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4.5 10.5l7.5-6 7.5 6V19.5a1.5 1.5 0 01-1.5 1.5h-3.75v-6h-4.5v6H6A1.5 1.5 0 014.5 19.5v-9z"/></svg>
+              Ruang Tamu
+            </button>
+            <button class="t-tab" onclick="changeScene('master',this)">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M21 12.79A8 8 0 0112.21 3a6 6 0 108.79 9.79z"/></svg>
+              Kamar Utama
+            </button>
+            <button class="t-tab" onclick="changeScene('kitchen',this)">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3C9 6 9 8.5 9 10a3 3 0 006 0c0-.5 0-1.5-.5-2.5.5.5 3 3 3 6a5.5 5.5 0 01-11 0c0-2.5 2-4.5 3.5-6.5z"/></svg>
+              Dapur & Dining
+            </button>
+            <button class="t-tab" onclick="changeScene('balcony',this)">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 7a2 2 0 012-2h2l1-2h4l1 2h2a2 2 0 012 2v10H4V7z"/><circle cx="12" cy="12" r="2.5"/></svg>
+              Balkon & Fasad
+            </button>
+            <button class="t-tab" onclick="showVideo(this)">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M8.25 6.75v10.5l8.25-5.25-8.25-5.25z"/></svg>
+              Video Atlas
+            </button>
+          </div>
+
+          <div id="tour360-wrap">
+            <div id="tour360"></div>
+            <div class="t-label" id="sceneLabel">Ruang Tamu – Tipe Vivace</div>
+            <div class="t-tip">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M15.042 21.672L11.25 14.25 4.5 11.25 21 3 13.5 19.5l1.542 2.172z"/></svg>
+              Geser · Scroll zoom · Full screen
+            </div>
+          </div>
+          <div id="videoWrap">
+            <iframe id="atlasVideo"
+              data-src="https://www.youtube.com/embed/Hj9HcpBSZ8Y?autoplay=1&rel=0&modestbranding=1"
+              allow="autoplay; fullscreen" allowfullscreen title="Video Atlas Tour CitraLand">
+            </iframe>
+          </div>
+
+          <div class="tour-footer">
+            <span>Setelah tur, isi Form Minat agar tim CitraLand dapat menghubungi Anda.</span>
+            <button onclick="goForm('tour')">Isi Form Minat ➜</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ KAWASAN ════════════════════════════════ -->
+    <section id="kawasan" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-kicker">Kawasan Cremona & CitraLand</div>
+          <h2 class="section-title">Boulevard, Gate, dan Taman Tematik</h2>
+          <p class="section-sub">Rasakan suasana tinggal di Cremona melalui visual kawasan — boulevard hijau, gate eksklusif, dan taman tematik keluarga.</p>
+        </div>
+        <div class="gallery-grid reveal">
+          <div class="g-main">
+            <!-- GANTI FOTO BOULEVARD ASLI -->
+            <img src="https://images.unsplash.com/photo-1520256862855-398228c41684?w=1200&q=80"
+                 alt="Boulevard hijau CitraLand Puri Serang" loading="lazy" />
+            <div class="g-label">Boulevard dengan taman tematik & jalur pedestrian</div>
+          </div>
+          <div class="g-side">
+            <div class="g-card">
+              <!-- GANTI FOTO GATE ASLI -->
+              <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80"
+                   alt="Gate Cluster Cremona CitraLand" loading="lazy" />
+              <div class="g-card-label">Gate Cremona · one gate system & security 24 jam</div>
+            </div>
+            <div class="g-card">
+              <!-- GANTI FOTO TAMAN ASLI -->
+              <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=800&q=80"
+                   alt="Taman tematik Cluster Cremona" loading="lazy" />
+              <div class="g-card-label">Taman tematik & area komunal keluarga</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════════════════════ SPESIFIKASI ══════════════════════════════ -->
+    <section id="spesifikasi" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-kicker">Spesifikasi Tipe Vivace</div>
+          <h2 class="section-title">Detail Teknis & Keunggulan Cremona</h2>
+          <p class="section-sub">Spesifikasi mengacu pada informasi resmi Tipe Vivace, Cluster Cremona, CitraLand Puri Serang.</p>
+        </div>
+        <div class="card reveal">
+          <div class="spec-grid">
+            <div class="spec-item">
+              <div class="spec-label">Luas Bangunan</div>
+              <div class="spec-val">± 110 m²</div>
+              <div class="spec-note">2 lantai, area publik & privat terpisah</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Luas Tanah</div>
+              <div class="spec-val">± 96 m²</div>
+              <div class="spec-note">Carport 2 mobil, lebar muka premium</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Kamar Tidur</div>
+              <div class="spec-val">4 Kamar</div>
+              <div class="spec-note">Utama, anak, tamu, dan tambahan</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Kamar Mandi</div>
+              <div class="spec-val">3 Kamar Mandi</div>
+              <div class="spec-note">Di tiap lantai untuk kenyamanan keluarga</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Sertifikasi</div>
+              <div class="spec-val">EDGE Green Building</div>
+              <div class="spec-note">Efisiensi energi, air, dan material</div>
+            </div>
+            <div class="spec-item">
+              <div class="spec-label">Utilitas</div>
+              <div class="spec-val">2200 Watt · Air tanah</div>
+              <div class="spec-note">HGB · non furnished · siap KPR</div>
+            </div>
+          </div>
+          <div class="price-box">
+            <div class="price-label">Harga Mulai*</div>
+            <div class="price-main">± Rp 2.200.000.000</div>
+            <div class="price-sub">*Harga final dan promo aktual dikonfirmasi tim CitraLand setelah Anda mengisi Google Form.</div>
+          </div>
+
+          <!-- KPR CALCULATOR INTERAKTIF -->
+          <div class="kpr-calc">
+            <div class="kpr-title">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M9 7H5.75A2.75 2.75 0 003 9.75v8.5A2.75 2.75 0 005.75 21h12.5A2.75 2.75 0 0021 18.25V9.75A2.75 2.75 0 0018.25 7H15M9 7V4.75A2.25 2.25 0 0111.25 2.5h1.5A2.25 2.25 0 0115 4.75V7M9 7h6"/><path d="M9 13h6M9 16.5h4"/></svg>
+              Kalkulator KPR Estimasi
+            </div>
+            <div class="kpr-row">
+              <div class="kpr-field">
+                <div class="kpr-field-label">Harga Properti</div>
+                <input type="number" id="kprHarga" value="2200000000" step="50000000" />
+              </div>
+              <div class="kpr-fields-row">
+                <div class="kpr-field">
+                  <div class="kpr-field-label">Uang Muka (%)</div>
+                  <input type="number" id="kprDp" value="20" min="10" max="90" />
+                </div>
+                <div class="kpr-field">
+                  <div class="kpr-field-label">Tenor (tahun)</div>
+                  <select id="kprTenor">
+                    <option value="5">5 tahun</option>
+                    <option value="10">10 tahun</option>
+                    <option value="15" selected>15 tahun</option>
+                    <option value="20">20 tahun</option>
+                    <option value="25">25 tahun</option>
+                  </select>
+                </div>
+              </div>
+              <div class="kpr-field">
+                <div class="kpr-field-label">Suku Bunga / Tahun (%)</div>
+                <input type="number" id="kprBunga" value="9" step="0.5" min="0" />
+              </div>
+            </div>
+            <div class="kpr-result" id="kprResult">
+              <span>Estimasi cicilan/bulan:</span>
+              <span class="kpr-result-val" id="kprOutput">Rp –</span>
+            </div>
+            <button class="kpr-btn" onclick="goForm('kpr')">
+              Konsultasi KPR ke Tim CitraLand ➜
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ LOKASI ═════════════════════════════════ -->
+    <section id="lokasi" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-kicker">Lokasi & Akses</div>
+          <h2 class="section-title">Cluster Cremona – CitraLand Puri Serang</h2>
+          <p class="section-sub">Berada di Jl. Lingkar Selatan, CitraLand Puri Serang memberikan akses cepat ke tol, pusat kota, dan fasilitas utama Kota Serang.</p>
+        </div>
+        <div class="loc-grid reveal">
+          <div class="card">
+            <h3 style="font-size:15px;font-weight:600;margin-bottom:6px;">Jarak ke Fasilitas Utama</h3>
+            <p style="font-size:13px;color:var(--text-muted);">Estimasi waktu tempuh dari CitraLand Puri Serang.</p>
+            <ul class="loc-list">
+              <li><span>Tol Serang Barat</span><span class="loc-time">± 10 menit</span></li>
+              <li><span>Stasiun Serang</span><span class="loc-time">± 10 menit</span></li>
+              <li><span>RS Hermina / RS Budi Asih</span><span class="loc-time">± 10 menit</span></li>
+              <li><span>Mall of Serang</span><span class="loc-time">± 15 menit</span></li>
+              <li><span>Universitas Serang Raya</span><span class="loc-time">± 5 menit</span></li>
+              <li><span>Pusat Kota Serang</span><span class="loc-time">± 5–10 menit</span></li>
+            </ul>
+          </div>
+          <div class="map-wrap">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.9!2d106.1547!3d-6.1192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e418e3f!2sCitraland%20Puri%20Serang!5e0!3m2!1sid!2sid!4v1699999999"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════ FORM CTA ══════════════════════════════ -->
+    <section id="form" class="cta-section">
+      <div class="container">
+        <div class="cta-card reveal">
+          <div>
+            <p class="cta-kicker">Form Minat Pembelian Resmi CitraLand</p>
+            <h2 class="cta-title">Isi Form, Tim CitraLand yang Menghubungi Anda</h2>
+            <p class="cta-body">
+              Semua data yang dikirim lewat Google Form resmi langsung diterima oleh tim internal CitraLand Puri Serang dan akan di-follow up dalam 1×24 jam.
+            </p>
+            <div class="cta-agent">
+              <div class="cta-avatar">
+                <!-- GANTI DENGAN FOTO PROFIL KAMU -->
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=80" alt="Ferland Firmansyah – Agen Afiliasi" loading="lazy" />
+              </div>
+              <div class="cta-agent-info">
+                <div class="cta-agent-name">Ferland Firmansyah</div>
+                <div class="cta-agent-role">Agen Afiliasi Cluster Cremona – CitraLand Puri Serang</div>
+              </div>
+            </div>
+          </div>
+          <div class="cta-actions">
+            <button class="cta-main-btn" onclick="goForm('cta')">
+              Buka Form Minat Resmi ➜
+            </button>
+            <p class="cta-note">Tidak ada biaya. Tim CitraLand menghubungi untuk menjelaskan harga, promo, dan jadwal kunjungan show unit.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- BOTTOM NAV SAMA, HANYA PANGGIL goForm('bottom') UNTUK ITEM FORM -->
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-row">
+      <span>© 2026 Cluster Cremona · CitraLand Puri Serang. Halaman afiliasi, bukan situs resmi developer.</span>
+      <div class="footer-links">
+        <a href="https://www.citralandpuriserang.com" target="_blank" rel="noopener">Website Resmi CitraLand</a>
+        <a href="https://www.citralandpuriserang.com/cremona-cluster/" target="_blank" rel="noopener">Halaman Resmi Cremona</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTTOM NAV (Home, Tour, Kawasan, Form) -->
+  <nav class="bottom-nav" aria-label="Navigasi bawah">
+    <div class="bn-item active" id="bn-home" onclick="scrollTo('home');setActive('bn-home')">
+      <div class="bn-icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4.5 10.5l7.5-6 7.5 6V19.5a1.5 1.5 0 01-1.5 1.5h-3.75v-6h-4.5v6H6A1.5 1.5 0 014.5 19.5v-9z"/></svg>
+      </div>
+      <span>Home</span>
+    </div>
+    <div class="bn-item" id="bn-tour" onclick="scrollTo('tour');setActive('bn-tour')">
+      <div class="bn-icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9.75 3.5L4.5 6.25v5.5l5.25 2.75 5.25-2.75v-5.5L9.75 3.5z"/><path d="M4.5 12v5.75L9.75 21.5l5.25-3.75V12"/></svg>
+      </div>
+      <span>Tour</span>
+    </div>
+    <div class="bn-item" id="bn-kawasan" onclick="scrollTo('kawasan');setActive('bn-kawasan')">
+      <div class="bn-icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 4.5l6-2 4.5 1.5v14.5l-4.5-1.5-6 2-4.5-1.5V3z"/><path d="M9 4.5v14.5"/><path d="M15 2.5v14.5"/></svg>
+      </div>
+      <span>Kawasan</span>
+    </div>
+    <div class="bn-item" id="bn-form" onclick="scrollTo('form');setActive('bn-form')">
+      <div class="bn-icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 12h6M9 15h3M9 9h3"/><path d="M7.5 3.75h6.75L18 7.5v12.75H7.5z"/></svg>
+      </div>
+      <span>Form</span>
+    </div>
+  </nav>
+
+  <!-- POPUP SETELAH KLIK FORM -->
+  <div class="popup-overlay" id="popup">
+    <div class="popup-box">
+      <div class="popup-icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 4.5l7.5 3.75v4.5c0 3.728-2.55 7.13-6.25 8.25a8.36 8.36 0 01-2.5 0C6.05 19.88 3.5 16.478 3.5 12.75v-4.5L12 4.5z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3 class="popup-title">Form Sudah Terbuka!</h3>
+      <p class="popup-body">Setelah mengisi dan mengirim form, berikut yang akan terjadi:</p>
+      <ul class="popup-steps">
+        <li>
+          <span class="popup-step-num">1</span>
+          <span>Data Anda masuk langsung ke sistem CitraLand Puri Serang.</span>
+        </li>
+        <li>
+          <span class="popup-step-num">2</span>
+          <span>Tim pemasaran resmi CitraLand akan menghubungi via WhatsApp / telepon dalam 1×24 jam.</span>
+        </li>
+        <li>
+          <span class="popup-step-num">3</span>
+          <span>Anda akan dijelaskan harga final, promo aktual, dan jadwal kunjungan show unit.</span>
+        </li>
+      </ul>
+      <button class="popup-close" onclick="closePopup()">Tutup & Kembali ke Halaman</button>
+    </div>
+  </div>
 
   <script>
+    /* ── KONFIGURASI ── */
     const GFORM_URL = "https://docs.google.com/forms/d/XXXXXXXXXXXX/viewform";
 
-    // state sederhana untuk affiliate funnel
+    /* ── FUNNEL STATE ── */
     let clickCount = 0;
 
-    function goForm(source = "unknown") {
+    function goForm(src = "unknown") {
       clickCount++;
-      document.getElementById("clickCount").textContent = clickCount.toString();
-      document.getElementById("lastSource").textContent = source;
-      updateFunnelProgress(source);
+      document.getElementById("clickCount").textContent = clickCount;
+      document.getElementById("lastSrc").textContent = src;
+      advanceFunnel(src);
       window.open(GFORM_URL, "_blank");
+      showPopup();
     }
 
-    function updateFunnelProgress(source) {
-      const progress = document.getElementById("funnelProgress");
-      const stepView = document.getElementById("step-view");
-      const stepTour = document.getElementById("step-tour");
-      const stepForm = document.getElementById("step-form");
-
-      stepView.classList.add("active");
-      // kalau sumber dari section tour, anggap user sudah sampai step Tour
-      if (source === "tour") {
-        stepTour.classList.add("active");
-        progress.style.width = "66%";
-      } else if (source === "hero" || source === "bottom" || source === "cta") {
-        stepTour.classList.add("active");
-        stepForm.classList.add("active");
-        progress.style.width = "100%";
-      } else {
-        progress.style.width = "33%";
-      }
+    function advanceFunnel(src) {
+      const fill  = document.getElementById("funnelFill");
+      const sTour = document.getElementById("fs-tour");
+      const sForm = document.getElementById("fs-form");
+      sTour.classList.add("done");
+      sForm.classList.add("done");
+      fill.style.width = "100%";
     }
 
-    function scrollToId(id) {
+    function scrollTo(id) {
       const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
-      // update step ketika user scroll ke tour
+      if (el) el.scrollIntoView({ behavior:"smooth" });
       if (id === "tour") {
-        document.getElementById("step-tour").classList.add("active");
-        document.getElementById("funnelProgress").style.width = "66%";
+        document.getElementById("fs-tour").classList.add("done");
+        document.getElementById("funnelFill").style.width = "66%";
       }
     }
 
-    function toggleMobileNav() {
-      const nav = document.getElementById("navMobile");
-      nav.style.display = nav.style.display === "flex" ? "none" : "flex";
-    }
-    function closeMobileNav() {
-      document.getElementById("navMobile").style.display = "none";
-    }
-    function setBottomActive(el) {
-      document.querySelectorAll(".bottom-item").forEach(i => i.classList.remove("active"));
-      el.classList.add("active");
+    function setActive(id) {
+      document.querySelectorAll(".bn-item").forEach(i => i.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
     }
 
-    // Pannellum scenes tetap sama
+    /* ── POPUP ── */
+    function showPopup() {
+      document.getElementById("popup").classList.add("show");
+    }
+    function closePopup() {
+      document.getElementById("popup").classList.remove("show");
+    }
+    document.getElementById("popup").addEventListener("click", function(e){
+      if (e.target === this) closePopup();
+    });
+
+    /* ── PANNELLUM ── */
     const scenes = {
-      living: { label: "Ruang Tamu – Tipe Vivace", image: "https://pannellum.org/images/cerro-toco-0.jpg" },
-      master: { label: "Kamar Utama – Tipe Vivace", image: "https://pannellum.org/images/alma-panorama.jpg" },
-      kitchen:{ label: "Dapur & Dining – Tipe Vivace", image: "https://pannellum.org/images/bma-1.jpg" },
-      balcony:{ label: "Balkon & Fasad – Tipe Vivace", image: "https://pannellum.org/images/cerro-toco-1.jpg" }
+      living:  { label:"Ruang Tamu – Tipe Vivace",    img:"https://pannellum.org/images/cerro-toco-0.jpg" },
+      master:  { label:"Kamar Utama – Tipe Vivace",   img:"https://pannellum.org/images/alma-panorama.jpg" },
+      kitchen: { label:"Dapur & Dining – Tipe Vivace", img:"https://pannellum.org/images/bma-1.jpg" },
+      balcony: { label:"Balkon & Fasad – Tipe Vivace", img:"https://pannellum.org/images/cerro-toco-1.jpg" }
     };
     let viewer = null;
 
-    function initViewer(sceneKey) {
-      const scene = scenes[sceneKey];
-      const labelEl = document.getElementById("sceneLabel");
-      if (labelEl) labelEl.textContent = scene.label;
-      if (viewer) {
-        try { viewer.destroy(); } catch(e) {}
-      }
+    function initViewer(key) {
+      const s = scenes[key];
+      const lbl = document.getElementById("sceneLabel");
+      if (lbl) lbl.textContent = s.label;
+      if (viewer) { try { viewer.destroy(); } catch(e){} }
       viewer = pannellum.viewer("tour360", {
-        type: "equirectangular",
-        panorama: scene.image,
+        type:"equirectangular",
+        panorama: s.img,
         autoLoad: true,
         autoRotate: -1.2,
         autoRotateInactivityDelay: 4000,
         showControls: true,
         showZoomCtrl: true,
         showFullscreenCtrl: true,
-        hfov: 95,
-        minHfov: 45,
-        maxHfov: 120,
-        pitch: 3,
-        compass: false
+        hfov: 95, minHfov: 45, maxHfov: 120,
+        pitch: 3, compass: false
       });
     }
 
-    function changeScene(sceneKey, btn) {
-      document.querySelectorAll(".tour-tab").forEach(t => t.classList.remove("active"));
-      if (btn) btn.classList.add("active");
+    function changeScene(key, btn) {
+      document.querySelectorAll(".t-tab").forEach(t => t.classList.remove("active"));
+      btn.classList.add("active");
       document.getElementById("tour360-wrap").style.display = "block";
-      document.getElementById("atlasVideoWrap").style.display = "none";
-      initViewer(sceneKey);
+      document.getElementById("videoWrap").style.display = "none";
+      initViewer(key);
+      document.getElementById("fs-tour").classList.add("done");
+      document.getElementById("funnelFill").style.width = "66%";
     }
 
-    function showAtlasVideo(btn) {
-      document.querySelectorAll(".tour-tab").forEach(t => t.classList.remove("active"));
-      if (btn) btn.classList.add("active");
+    function showVideo(btn) {
+      document.querySelectorAll(".t-tab").forEach(t => t.classList.remove("active"));
+      btn.classList.add("active");
       document.getElementById("tour360-wrap").style.display = "none";
-      const wrap = document.getElementById("atlasVideoWrap");
+      const wrap = document.getElementById("videoWrap");
       wrap.style.display = "block";
       const iframe = document.getElementById("atlasVideo");
       if (!iframe.src) iframe.src = iframe.dataset.src;
     }
 
-    // Scroll‑reveal IntersectionObserver (sama seperti versi sebelumnya)
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("show");
-      });
-    }, { threshold: 0.15 });
+    /* ── KPR CALCULATOR ── */
+    function calcKPR() {
+      const H = parseFloat(document.getElementById("kprHarga").value) || 0;
+      const dpPct = parseFloat(document.getElementById("kprDp").value) || 20;
+      const tenor = parseInt(document.getElementById("kprTenor").value) || 15;
+      const bungaTahunan = parseFloat(document.getElementById("kprBunga").value) || 9;
 
-    document.addEventListener("DOMContentLoaded", function () {
+      const pokok = H * (1 - dpPct / 100);
+      const r = bungaTahunan / 100 / 12;
+      const n = tenor * 12;
+      let cicilan = 0;
+
+      if (r === 0) {
+        cicilan = pokok / n;
+      } else {
+        cicilan = pokok * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      }
+
+      const fmt = new Intl.NumberFormat("id-ID", { style:"currency", currency:"IDR", maximumFractionDigits:0 });
+      document.getElementById("kprOutput").textContent = fmt.format(Math.round(cicilan));
+    }
+
+    ["kprHarga","kprDp","kprTenor","kprBunga"].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener("input", calcKPR);
+    });
+
+    /* ── SCROLL REVEAL ── */
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
+    }, { threshold: 0.12 });
+
+    /* ── SCROLL SPY (update bottom nav active) ── */
+    const sections = ["home","tour","kawasan","form"];
+    const bnMap = { home:"bn-home", tour:"bn-tour", kawasan:"bn-kawasan", form:"bn-form" };
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const id = e.target.id;
+          if (bnMap[id]) setActive(bnMap[id]);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+      sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) sectionObserver.observe(el);
+      });
       initViewer("living");
+      calcKPR();
     });
   </script>
 </body>
