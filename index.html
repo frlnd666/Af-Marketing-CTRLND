@@ -2,934 +2,903 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Cluster Cremona CitraLand Puri Serang – Tipe Vivace Rumah Mewah Green Building</title>
-  <meta name="description" content="Landing page resmi afiliasi untuk penjualan Cluster Cremona – Tipe Vivace di CitraLand Puri Serang. Rumah 2 lantai modern, 4 kamar, bersertifikasi Green Building EDGE. Isi form minat pembelian dan tim ahli CitraLand akan menghubungi Anda." />
-  <link rel="canonical" href="https://example.com/cluster-cremona-citraland-puri-serang" />
+  <title>Cluster Cremona – Tipe Vivace | CitraLand Puri Serang</title>
+  <meta name="description" content="Landing page afiliasi profesional untuk Cluster Cremona – Tipe Vivace di CitraLand Puri Serang. Rumah 2 lantai bersertifikasi Green Building EDGE dengan gate cluster eksklusif, taman tematik, dan virtual tour 360° tiap ruangan." />
+
+  <!-- Favicon / App Icon (GANTI FAVICON_URL DENGAN LOGO KAMU) -->
+  <link rel="icon" type="image/png" href="FAVICON_URL" />
+  <link rel="apple-touch-icon" href="FAVICON_URL" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Cluster Cremona – Tipe Vivace CitraLand Puri Serang" />
-  <meta property="og:description" content="Rumah mewah 2 lantai bersertifikasi Green Building EDGE di Cluster Cremona, CitraLand Puri Serang. Kunjungi landing page afiliasi dan isi form minat pembelian." />
+  <meta property="og:title" content="Cluster Cremona – Tipe Vivace | CitraLand Puri Serang" />
+  <meta property="og:description" content="Rumah mewah 2 lantai bersertifikasi Green Building EDGE di Cluster Cremona, CitraLand Puri Serang. Lihat virtual tour 360° dan isi form minat pembelian resmi." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-0ef3c08c0632?w=1200&q=80" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Pannellum 360 -->
+  <!-- Pannellum -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
   <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
 
   <style>
     :root {
-      --bg: #050608;
-      --bg-soft: #0b0d11;
-      --bg-card: #101320;
-      --bg-card-soft: #121624;
+      --bg: #05070b;
+      --bg-soft: #0b0f18;
+      --bg-card: #101522;
+      --bg-elevated: #121828;
       --primary: #f5c669;
-      --primary-soft: rgba(245,198,105,0.16);
       --accent: #25d366;
-      --text-main: #f7f5ef;
-      --text-muted: #9c9aa2;
+      --accent-soft: rgba(37,211,102,0.12);
+      --text-main: #f9f6ef;
+      --text-muted: #a0a1b2;
       --border-subtle: rgba(255,255,255,0.06);
       --radius-lg: 20px;
       --radius-md: 12px;
       --radius-pill: 999px;
+      --shadow-soft: 0 20px 60px rgba(0,0,0,0.7);
       --max-width: 1120px;
       --nav-height: 64px;
-      --shadow-soft: 0 18px 50px rgba(0,0,0,0.65);
+      --bottom-nav-height: 60px;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
     body {
-      background: radial-gradient(circle at top, #171b30 0, #050608 55%, #020306 100%);
+      background: radial-gradient(circle at top, #171d32 0, #05070b 55%, #020306 100%);
       color: var(--text-main);
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 15px;
       line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
+      padding-bottom: var(--bottom-nav-height);
     }
-
-    img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-    main { min-height: 100vh; }
+    img { max-width:100%; display:block; }
+    a { color:inherit; text-decoration:none; }
 
     .container {
-      width: 100%;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 16px;
+      width:100%;
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:0 16px;
     }
 
-    /* NAV */
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 30;
-      backdrop-filter: blur(14px);
-      background: linear-gradient(to bottom, rgba(5,6,8,0.96), rgba(5,6,8,0.9));
-      border-bottom: 1px solid rgba(255,255,255,0.04);
+    /* TOP NAVBAR */
+    header.nav {
+      position:sticky;
+      top:0;
+      z-index:30;
+      backdrop-filter:blur(14px);
+      background:linear-gradient(to bottom,rgba(5,7,12,0.98),rgba(5,7,12,0.92));
+      border-bottom:1px solid rgba(255,255,255,0.05);
     }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: var(--nav-height);
+    .nav-inner{
+      height:var(--nav-height);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
     }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
     }
-    .brand-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: 12px;
-      background: conic-gradient(from 200deg, #ffe8a8, #f5c669, #ff9f6b, #ffe8a8);
-      padding: 3px;
-      box-shadow: 0 0 18px rgba(245,198,105,0.55);
+    .brand-mark{
+      width:28px;height:28px;
+      border-radius:12px;
+      background:conic-gradient(from 220deg,#ffe7a0,#f5c669,#ff9966,#ffe7a0);
+      padding:3px;
+      box-shadow:0 0 18px rgba(245,198,105,0.55);
     }
-    .brand-icon-inner {
-      width: 100%;
-      height: 100%;
-      border-radius: inherit;
-      background: #050609;
+    .brand-mark-inner{
+      width:100%;height:100%;
+      border-radius:inherit;
+      background:#05070b url('FAVICON_URL') center/70% no-repeat;
     }
-    .brand-text {
-      font-family: "Cormorant Garamond", serif;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 11px;
-      color: var(--text-muted);
+    .brand-text{
+      font-family:"Cormorant Garamond",serif;
+      text-transform:uppercase;
+      letter-spacing:0.16em;
+      font-size:11px;
+      color:var(--text-muted);
     }
-    .brand-text span {
-      color: var(--text-main);
-    }
+    .brand-text span{ color:var(--text-main); }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:18px;
     }
-    .nav-links a {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--text-muted);
-      position: relative;
-      padding: 3px 0;
+    .nav-links a{
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:0.14em;
+      color:var(--text-muted);
+      position:relative;
+      padding:3px 0;
     }
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0; bottom: -3px;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, #f5c669, #ff9f6b);
-      transition: width 0.18s ease;
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      left:0;bottom:-3px;
+      width:0;height:2px;
+      background:linear-gradient(90deg,#f5c669,#ff9966);
+      transition:width .2s ease;
     }
-    .nav-links a:hover::after { width: 100%; }
-    .nav-links a.active {
-      color: var(--text-main);
+    .nav-links a:hover::after{ width:100%; }
+    .nav-links a.active{
+      color:var(--text-main);
     }
-    .nav-links a.active::after { width: 100%; }
+    .nav-links a.active::after{ width:100%; }
 
-    .nav-cta {
-      padding: 8px 16px;
-      border-radius: var(--radius-pill);
-      border: none;
-      background: radial-gradient(circle at 0 0, #ffe7a0 0, #f5c669 30%, #ff9f6b 100%);
-      color: #1a1207;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      box-shadow: 0 12px 34px rgba(0,0,0,0.65);
+    .nav-cta{
+      padding:8px 16px;
+      border-radius:var(--radius-pill);
+      border:none;
+      background:radial-gradient(circle at 0 0,#ffe7a0,#f5c669 40%,#ff9966 100%);
+      color:#1e1308;
+      font-size:11px;
+      font-weight:600;
+      letter-spacing:0.16em;
+      text-transform:uppercase;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      cursor:pointer;
+      box-shadow:0 12px 34px rgba(0,0,0,0.7);
     }
-    .nav-cta span { font-size: 14px; }
+    .nav-cta span{ font-size:14px; }
 
-    /* MOBILE NAV */
-    .nav-burger {
-      display: none;
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(7,9,14,0.9);
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
+    .nav-burger{
+      display:none;
+      width:32px;height:32px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.22);
+      background:rgba(5,7,12,0.9);
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
     }
-    .nav-burger-line {
-      width: 16px;
-      height: 2px;
-      border-radius: 999px;
-      background: #f4f0df;
-      position: relative;
+    .nav-burger-line{
+      width:16px;height:2px;
+      border-radius:999px;
+      background:#f6f2e3;
+      position:relative;
     }
     .nav-burger-line::before,
-    .nav-burger-line::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: 16px;
-      height: 2px;
-      border-radius: 999px;
-      background: #f4f0df;
+    .nav-burger-line::after{
+      content:"";
+      position:absolute;
+      left:0;
+      width:16px;height:2px;
+      border-radius:999px;
+      background:#f6f2e3;
     }
-    .nav-burger-line::before { top: -5px; }
-    .nav-burger-line::after { top: 5px; }
+    .nav-burger-line::before{ top:-5px; }
+    .nav-burger-line::after{ top:5px; }
 
-    .nav-links-mobile {
-      display: none;
-      flex-direction: column;
-      gap: 10px;
-      padding: 10px 16px 12px;
-      background: rgba(4,5,9,0.96);
-      border-top: 1px solid rgba(255,255,255,0.04);
+    .nav-links-mobile{
+      display:none;
+      flex-direction:column;
+      gap:10px;
+      padding:10px 16px 14px;
+      background:rgba(5,7,12,0.96);
+      border-top:1px solid rgba(255,255,255,0.05);
     }
-    .nav-links-mobile a {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-muted);
-      padding: 5px 0;
+    .nav-links-mobile a{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:0.18em;
+      color:var(--text-muted);
+      padding:4px 0;
     }
 
     /* HERO */
-    .hero {
-      padding: 22px 0 32px;
+    .hero{
+      padding:20px 0 30px;
     }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      gap: 24px;
-      align-items: center;
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);
+      gap:24px;
+      align-items:center;
     }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 4px 12px 4px 4px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(245,198,105,0.3);
-      background: radial-gradient(circle at 0 0, rgba(245,198,105,0.3), rgba(12,14,22,0.92));
-      margin-bottom: 12px;
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:4px 12px 4px 4px;
+      border-radius:var(--radius-pill);
+      border:1px solid rgba(245,198,105,0.35);
+      background:radial-gradient(circle at 0 0,rgba(245,198,105,0.32),rgba(12,14,24,0.95));
+      margin-bottom:10px;
     }
-    .hero-badge-dot {
-      width: 16px;
-      height: 16px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #57e39b, #f5c669);
-      padding: 3px;
+    .hero-badge-dot{
+      width:16px;height:16px;
+      border-radius:999px;
+      background:radial-gradient(circle at 30% 0,#57e39b,#f5c669);
+      padding:3px;
     }
-    .hero-badge-dot-inner {
-      width: 100%;
-      height: 100%;
-      border-radius: inherit;
-      background: #050609;
+    .hero-badge-dot-inner{
+      width:100%;height:100%;
+      border-radius:inherit;
+      background:#05070b;
     }
-    .hero-badge-text {
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-main);
+    .hero-badge-text{
+      font-size:11px;
+      letter-spacing:0.16em;
+      text-transform:uppercase;
     }
 
-    .hero-title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(2.4rem, 4vw, 3.3rem);
-      line-height: 1.04;
-      margin-bottom: 8px;
+    .hero-title{
+      font-family:"Cormorant Garamond",serif;
+      font-size:clamp(2.4rem,4vw,3.2rem);
+      line-height:1.05;
+      margin-bottom:8px;
     }
-    .hero-title span {
-      color: var(--primary);
-    }
-    .hero-sub {
-      font-size: 14px;
-      color: var(--text-muted);
-      max-width: 430px;
-      margin-bottom: 16px;
+    .hero-title span{ color:var(--primary); }
+
+    .hero-sub{
+      font-size:14px;
+      color:var(--text-muted);
+      max-width:460px;
+      margin-bottom:14px;
     }
 
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 18px;
+    .hero-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:16px;
     }
-    .hero-tag {
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(5,7,14,0.86);
-      font-size: 11px;
-      color: var(--text-muted);
+    .hero-tag{
+      padding:4px 10px;
+      border-radius:var(--radius-pill);
+      border:1px solid rgba(255,255,255,0.08);
+      background:rgba(6,8,16,0.95);
+      font-size:11px;
+      color:var(--text-muted);
     }
-    .hero-tag strong {
-      color: var(--primary);
-      font-weight: 500;
-    }
-
-    .hero-cta-row {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-bottom: 16px;
-      max-width: 360px;
+    .hero-tag strong{
+      color:var(--primary);
+      font-weight:500;
     }
 
-    .hero-cta-main {
-      width: 100%;
-      border-radius: var(--radius-pill);
-      padding: 11px 18px;
-      border: none;
-      background: linear-gradient(110deg, #25d366, #4be48e);
-      color: #021208;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      cursor: pointer;
-      box-shadow: 0 14px 38px rgba(0,0,0,0.7);
+    .hero-cta-row{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      margin-bottom:16px;
+      max-width:380px;
     }
-    .hero-cta-main span {
-      font-size: 14px;
+    .hero-cta-main{
+      width:100%;
+      border-radius:var(--radius-pill);
+      padding:11px 18px;
+      border:none;
+      background:linear-gradient(110deg,#f97316,#facc15);
+      color:#1b1208;
+      font-size:12px;
+      font-weight:600;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      cursor:pointer;
+      box-shadow:0 14px 38px rgba(0,0,0,0.75);
+    }
+    .hero-cta-main span{ font-size:16px; }
+
+    .hero-cta-secondary{
+      border-radius:var(--radius-pill);
+      padding:9px 14px;
+      border:1px dashed rgba(255,255,255,0.2);
+      background:rgba(4,7,16,0.96);
+      font-size:12px;
+      letter-spacing:0.14em;
+      text-transform:uppercase;
+      color:var(--text-muted);
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      cursor:pointer;
+    }
+    .hero-cta-secondary span{
+      font-size:16px;
+      color:var(--primary);
     }
 
-    .hero-cta-secondary {
-      border-radius: var(--radius-pill);
-      padding: 9px 14px;
-      border: 1px dashed rgba(255,255,255,0.16);
-      background: rgba(4,6,12,0.92);
-      font-size: 12px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
+    .hero-info-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      font-size:12px;
+      color:var(--text-muted);
     }
-    .hero-cta-secondary span {
-      font-size: 16px;
-      color: var(--primary);
+    .hero-info-item{
+      display:flex;
+      flex-direction:column;
     }
-
-    .hero-info-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      font-size: 12px;
-      color: var(--text-muted);
+    .hero-info-label{
+      font-size:10px;
+      letter-spacing:0.16em;
+      text-transform:uppercase;
+      color:#808196;
     }
-    .hero-info-item {
-      display: flex;
-      flex-direction: column;
+    .hero-info-value{
+      font-size:13px;
+      color:var(--text-main);
+      font-weight:500;
     }
-    .hero-info-label {
-      font-size: 10px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #7b7a84;
-    }
-    .hero-info-value {
-      font-size: 13px;
-      color: var(--text-main);
-      font-weight: 500;
-    }
-    .hero-info-em {
-      color: #8ce4b0;
+    .hero-info-em{
+      color:#8ce4b0;
     }
 
-    .hero-media-card {
-      border-radius: 24px;
-      background: radial-gradient(circle at 0 0, rgba(245,198,105,0.3), rgba(9,11,18,0.96));
-      padding: 12px;
-      border: 1px solid rgba(245,198,105,0.45);
-      box-shadow: var(--shadow-soft);
+    .hero-media-card{
+      border-radius:24px;
+      background:radial-gradient(circle at 0 0,rgba(245,198,105,0.36),rgba(7,10,18,0.98));
+      padding:12px;
+      border:1px solid rgba(245,198,105,0.5);
+      box-shadow:var(--shadow-soft);
     }
-    .hero-media-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 6px;
+    .hero-media-main{
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.06);
+      position:relative;
+      background:#000;
     }
-    .hero-media-label {
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-main);
+    .hero-media-main img{
+      width:100%;
+      transform:scale(1.03);
+      transform-origin:center;
+      transition:transform 10s ease-out;
     }
-    .hero-media-badge {
-      font-size: 10px;
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      background: rgba(3,8,14,0.9);
-      border: 1px solid rgba(245,198,105,0.55);
-      color: var(--primary);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
+    .hero-media-main:hover img{
+      transform:scale(1.08);
     }
-    .hero-media-main {
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.05);
-      position: relative;
-      background: #000;
+    .hero-media-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.8));
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      padding:10px 12px;
+      font-size:11px;
     }
-    .hero-media-main img {
-      width: 100%;
-      transform: scale(1.03);
-      transform-origin: center;
-      transition: transform 10s ease-out;
+    .hero-media-caption{
+      max-width:72%;
+      color:rgba(248,245,236,0.9);
     }
-    .hero-media-main:hover img {
-      transform: scale(1.08);
+    .hero-media-caption-label{
+      font-size:10px;
+      letter-spacing:0.16em;
+      text-transform:uppercase;
+      color:rgba(248,245,236,0.8);
     }
-    .hero-media-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.78));
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      padding: 10px 12px;
-      font-size: 11px;
-    }
-    .hero-media-caption {
-      max-width: 70%;
-      color: rgba(248,245,236,0.9);
-    }
-    .hero-media-caption-label {
-      font-size: 10px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(248,245,236,0.8);
-    }
-    .hero-media-pill {
-      font-size: 10px;
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      background: rgba(0,0,0,0.8);
-      border: 1px solid rgba(245,198,105,0.6);
-      color: rgba(245,245,245,0.9);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+    .hero-media-pill{
+      font-size:10px;
+      padding:4px 10px;
+      border-radius:var(--radius-pill);
+      background:rgba(0,0,0,0.85);
+      border:1px solid rgba(245,198,105,0.62);
+      color:rgba(245,245,245,0.92);
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
     }
 
-    /* SECTION BASE */
-    .section {
-      padding: 30px 0;
+    /* SECTIONS */
+    .section{ padding:28px 0; }
+    .section-header{ margin-bottom:18px; }
+    .section-kicker{
+      font-size:10px;
+      text-transform:uppercase;
+      letter-spacing:0.2em;
+      color:#7c7e96;
+      margin-bottom:4px;
     }
-    .section-header {
-      margin-bottom: 18px;
+    .section-title{
+      font-family:"Cormorant Garamond",serif;
+      font-size:22px;
+      margin-bottom:6px;
     }
-    .section-kicker {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: #7b7a84;
-      margin-bottom: 4px;
-    }
-    .section-title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 22px;
-      margin-bottom: 6px;
-    }
-    .section-sub {
-      font-size: 13px;
-      color: var(--text-muted);
-      max-width: 460px;
+    .section-sub{
+      font-size:13px;
+      color:var(--text-muted);
+      max-width:460px;
     }
 
-    /* SPEC & TOUR */
-    .spec-tour-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
-      gap: 18px;
-      align-items: flex-start;
+    /* GALLERY / GATE / TAMAN */
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:1.2fr 1fr;
+      gap:16px;
+      align-items:stretch;
+    }
+    .gallery-main{
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+      background:var(--bg-elevated);
+      border:1px solid var(--border-subtle);
+      position:relative;
+    }
+    .gallery-main img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .gallery-main-label{
+      position:absolute;
+      left:12px;bottom:12px;
+      padding:6px 12px;
+      border-radius:var(--radius-pill);
+      background:rgba(0,0,0,0.8);
+      font-size:11px;
+    }
+    .gallery-side{
+      display:grid;
+      grid-template-rows:1fr 1fr;
+      gap:12px;
+    }
+    .gallery-card{
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+      background:var(--bg-elevated);
+      border:1px solid var(--border-subtle);
+      position:relative;
+    }
+    .gallery-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .gallery-card-label{
+      position:absolute;
+      left:10px;bottom:10px;
+      padding:4px 10px;
+      border-radius:var(--radius-pill);
+      background:rgba(0,0,0,0.78);
+      font-size:11px;
     }
 
-    .card {
-      border-radius: var(--radius-lg);
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      padding: 16px 16px 14px;
-      box-shadow: 0 14px 40px rgba(0,0,0,0.58);
+    /* SPEC + TOUR GRID */
+    .spec-tour-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr);
+      gap:18px;
+      align-items:flex-start;
+    }
+    .card{
+      border-radius:var(--radius-lg);
+      background:var(--bg-card);
+      border:1px solid var(--border-subtle);
+      padding:16px 16px 14px;
+      box-shadow:0 14px 38px rgba(0,0,0,0.6);
     }
 
-    .spec-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 12px;
-      margin-top: 12px;
+    .spec-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+      margin-top:12px;
     }
-    .spec-item {
-      padding: 9px 10px;
-      border-radius: var(--radius-md);
-      background: linear-gradient(135deg, rgba(245,198,105,0.12), rgba(10,12,22,1));
-      border: 1px solid rgba(245,198,105,0.2);
+    .spec-item{
+      padding:9px 10px;
+      border-radius:var(--radius-md);
+      background:linear-gradient(135deg,rgba(245,198,105,0.08),rgba(8,10,20,1));
+      border:1px solid rgba(245,198,105,0.22);
     }
-    .spec-label {
-      font-size: 10px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #8c8a93;
-      margin-bottom: 2px;
+    .spec-label{
+      font-size:10px;
+      letter-spacing:0.16em;
+      text-transform:uppercase;
+      color:#87899a;
+      margin-bottom:2px;
     }
-    .spec-value {
-      font-size: 13px;
-      font-weight: 500;
+    .spec-value{
+      font-size:13px;
+      font-weight:500;
     }
-    .spec-note {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .price-box {
-      margin-top: 12px;
-      padding: 10px 10px;
-      border-radius: var(--radius-md);
-      background: linear-gradient(120deg, rgba(245,198,105,0.24), rgba(255,159,107,0.18));
-      border: 1px solid rgba(245,198,105,0.45);
-    }
-    .price-label {
-      font-size: 10px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #3a2511;
-    }
-    .price-main {
-      font-size: 18px;
-      font-weight: 600;
-      color: #1b1208;
-    }
-    .price-sub {
-      font-size: 11px;
-      color: #3c2a17;
+    .spec-note{
+      font-size:11px;
+      color:var(--text-muted);
     }
 
-    .usp-list {
-      margin-top: 14px;
-      list-style: none;
-      font-size: 12px;
-      color: var(--text-muted);
+    .price-box{
+      margin-top:12px;
+      padding:10px 10px;
+      border-radius:var(--radius-md);
+      background:linear-gradient(115deg,rgba(245,198,105,0.24),rgba(255,159,107,0.18));
+      border:1px solid rgba(245,198,105,0.5);
     }
-    .usp-list li {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 6px;
+    .price-label{
+      font-size:10px;
+      letter-spacing:0.16em;
+      text-transform:uppercase;
+      color:#3a2612;
     }
-    .usp-bullet {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--accent);
-      margin-top: 5px;
+    .price-main{
+      font-size:18px;
+      font-weight:600;
+      color:#1a1208;
     }
-
-    /* TOUR */
-    .tour-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 8px;
-    }
-    .tour-title {
-      font-size: 13px;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .tour-pill {
-      font-size: 10px;
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(245,198,105,0.4);
-      background: rgba(3,8,14,0.95);
-      color: var(--primary);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
+    .price-sub{
+      font-size:11px;
+      color:#3a2814;
     }
 
-    .tour-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 8px;
+    .usp-list{
+      margin-top:14px;
+      list-style:none;
+      font-size:12px;
+      color:var(--text-muted);
     }
-    .tour-tab {
-      flex: 1 1 80px;
-      min-width: 0;
-      padding: 6px 8px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(255,255,255,0.06);
-      background: rgba(9,11,20,0.96);
-      font-size: 11px;
-      color: var(--text-muted);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      cursor: pointer;
+    .usp-list li{
+      display:flex;
+      gap:8px;
+      margin-bottom:6px;
     }
-    .tour-tab.active {
-      border-color: rgba(245,198,105,0.8);
-      background: radial-gradient(circle at 0 0, rgba(245,198,105,0.36), rgba(8,10,18,1));
-      color: var(--text-main);
+    .usp-bullet{
+      width:7px;height:7px;
+      border-radius:999px;
+      background:var(--accent);
+      margin-top:5px;
     }
 
-    #tour360-wrap {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: #000;
+    /* TOUR 360 */
+    .tour-card-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:8px;
     }
-    #tour360 {
-      width: 100%;
-      height: 290px;
+    .tour-title{
+      font-size:13px;
+      font-weight:500;
+      display:flex;
+      align-items:center;
+      gap:6px;
     }
-    .tour-overlay-label {
-      position: absolute;
-      left: 10px;
-      top: 10px;
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      background: rgba(4,6,12,0.85);
-      border: 1px solid rgba(245,198,105,0.6);
-      font-size: 10px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--primary);
-    }
-    .tour-overlay-tip {
-      position: absolute;
-      right: 10px;
-      bottom: 10px;
-      padding: 6px 10px;
-      border-radius: var(--radius-pill);
-      background: rgba(0,0,0,0.82);
-      font-size: 10px;
-      color: rgba(245,245,245,0.9);
-      display: flex;
-      align-items: center;
-      gap: 6px;
+    .tour-pill{
+      font-size:10px;
+      padding:4px 10px;
+      border-radius:var(--radius-pill);
+      border:1px solid rgba(245,198,105,0.4);
+      background:rgba(3,7,14,0.96);
+      color:var(--primary);
+      letter-spacing:0.16em;
+      text-transform:uppercase;
     }
 
-    #atlasVideoWrap {
-      margin-top: 8px;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-      display: none;
+    .tour-tabs{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-bottom:8px;
     }
-    #atlasVideo {
-      width: 100%;
-      height: 240px;
-      border: 0;
+    .tour-tab{
+      flex:1 1 80px;
+      padding:6px 8px;
+      border-radius:var(--radius-pill);
+      border:1px solid rgba(255,255,255,0.06);
+      background:rgba(9,12,22,0.96);
+      font-size:11px;
+      color:var(--text-muted);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      cursor:pointer;
+    }
+    .tour-tab.active{
+      border-color:rgba(245,198,105,0.8);
+      background:radial-gradient(circle at 0 0,rgba(245,198,105,0.36),rgba(8,10,20,1));
+      color:var(--text-main);
     }
 
-    .tour-mode-toggle {
-      margin-top: 8px;
-      font-size: 11px;
-      color: var(--text-muted);
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-      flex-wrap: wrap;
-      align-items: center;
+    #tour360-wrap{
+      position:relative;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.08);
+      background:#000;
     }
-    .tour-mode-toggle button {
-      border-radius: var(--radius-pill);
-      padding: 6px 10px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(6,9,16,0.96);
-      color: var(--primary);
-      font-size: 11px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+    #tour360{ width:100%; height:290px; }
+    .tour-overlay-label{
+      position:absolute;
+      left:10px;top:10px;
+      padding:4px 10px;
+      border-radius:var(--radius-pill);
+      background:rgba(4,7,16,0.85);
+      border:1px solid rgba(245,198,105,0.6);
+      font-size:10px;
+      letter-spacing:0.16em;
+      text-transform:uppercase;
+      color:var(--primary);
+    }
+    .tour-overlay-tip{
+      position:absolute;
+      right:10px;bottom:10px;
+      padding:6px 10px;
+      border-radius:var(--radius-pill);
+      background:rgba(0,0,0,0.85);
+      font-size:10px;
+      color:rgba(245,245,245,0.9);
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+
+    #atlasVideoWrap{
+      display:none;
+      margin-top:8px;
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+    #atlasVideo{
+      width:100%;
+      height:240px;
+      border:0;
+    }
+
+    .tour-mode-toggle{
+      margin-top:8px;
+      font-size:11px;
+      color:var(--text-muted);
+      display:flex;
+      justify-content:space-between;
+      gap:8px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .tour-mode-toggle button{
+      border-radius:var(--radius-pill);
+      padding:6px 10px;
+      border:1px solid rgba(255,255,255,0.14);
+      background:rgba(6,9,18,0.96);
+      color:var(--primary);
+      font-size:11px;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
     }
 
     /* LOKASI */
-    .location-card {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-      gap: 18px;
-      align-items: flex-start;
+    .location-card{
+      display:grid;
+      grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr);
+      gap:18px;
+      align-items:flex-start;
     }
-    .location-list {
-      margin-top: 10px;
-      list-style: none;
-      font-size: 13px;
-      color: var(--text-muted);
+    .location-list{
+      margin-top:10px;
+      list-style:none;
+      font-size:13px;
+      color:var(--text-muted);
     }
-    .location-list li {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px dashed rgba(255,255,255,0.07);
-      padding: 6px 0;
+    .location-list li{
+      display:flex;
+      justify-content:space-between;
+      border-bottom:1px dashed rgba(255,255,255,0.07);
+      padding:6px 0;
     }
-    .location-time {
-      font-size: 12px;
-      color: var(--primary);
+    .location-time{
+      font-size:12px;
+      color:var(--primary);
     }
-    .map-frame {
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.08);
-      overflow: hidden;
+    .map-frame{
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.08);
+      overflow:hidden;
     }
-    .map-frame iframe {
-      width: 100%;
-      height: 220px;
-      border: 0;
-      filter: grayscale(0.3) contrast(1.1);
-    }
-
-    /* CTA */
-    .cta {
-      padding: 32px 0 34px;
-    }
-    .cta-card {
-      border-radius: 22px;
-      background: radial-gradient(circle at 0 0, rgba(245,198,105,0.38), rgba(9,10,14,0.98));
-      border: 1px solid rgba(245,198,105,0.46);
-      padding: 18px 18px 16px;
-      box-shadow: 0 18px 48px rgba(0,0,0,0.72);
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      gap: 18px;
-      align-items: center;
-    }
-    .cta-title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 22px;
-      margin-bottom: 6px;
-      color: #1f1408;
-    }
-    .cta-text {
-      font-size: 13px;
-      color: #3b2713;
-      max-width: 420px;
-      margin-bottom: 12px;
-    }
-    .cta-highlight {
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #2e1c0c;
-      margin-bottom: 4px;
-    }
-    .cta-agent {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 4px;
-    }
-    .cta-avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      overflow: hidden;
-      border: 2px solid rgba(255,255,255,0.7);
-    }
-    .cta-agent-info {
-      font-size: 11px;
-      color: #2b1a0a;
-    }
-    .cta-agent-name {
-      font-weight: 600;
-    }
-    .cta-agent-role {
-      color: #4b3116;
+    .map-frame iframe{
+      width:100%;
+      height:220px;
+      border:0;
+      filter:grayscale(0.3) contrast(1.1);
     }
 
-    .cta-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      align-items: flex-end;
+    /* CTA FORM */
+    .cta{
+      padding:30px 0 32px;
     }
-    .cta-main-btn {
-      border-radius: var(--radius-pill);
-      padding: 10px 16px;
-      border: none;
-      background: linear-gradient(110deg, #f97316, #facc15);
-      color: #1a1007;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      box-shadow: 0 14px 40px rgba(0,0,0,0.7);
-      text-align: center;
+    .cta-card{
+      border-radius:22px;
+      background:radial-gradient(circle at 0 0,rgba(245,198,105,0.38),rgba(9,10,14,0.98));
+      border:1px solid rgba(245,198,105,0.46);
+      padding:18px 18px 16px;
+      box-shadow:0 18px 48px rgba(0,0,0,0.8);
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);
+      gap:18px;
+      align-items:center;
     }
-    .cta-main-btn span {
-      font-size: 16px;
+    .cta-title{
+      font-family:"Cormorant Garamond",serif;
+      font-size:22px;
+      margin-bottom:6px;
+      color:#1f1308;
     }
-    .cta-note {
-      font-size: 11px;
-      color: #3b2713;
-      max-width: 260px;
-      text-align: right;
+    .cta-text{
+      font-size:13px;
+      color:#3a2613;
+      max-width:420px;
+      margin-bottom:12px;
+    }
+    .cta-highlight{
+      font-size:10px;
+      letter-spacing:0.2em;
+      text-transform:uppercase;
+      color:#2f1b0b;
+      margin-bottom:4px;
+    }
+    .cta-agent{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-top:4px;
+    }
+    .cta-avatar{
+      width:40px;height:40px;
+      border-radius:999px;
+      overflow:hidden;
+      border:2px solid rgba(255,255,255,0.8);
+    }
+    .cta-agent-info{
+      font-size:11px;
+      color:#2d1b0b;
+    }
+    .cta-agent-name{ font-weight:600; }
+    .cta-agent-role{ color:#4b3016; }
+
+    .cta-actions{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      align-items:flex-end;
+    }
+    .cta-main-btn{
+      border-radius:var(--radius-pill);
+      padding:10px 16px;
+      border:none;
+      background:linear-gradient(110deg,#f97316,#facc15);
+      color:#1b1208;
+      font-size:12px;
+      font-weight:600;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      cursor:pointer;
+      text-align:center;
+      box-shadow:0 14px 40px rgba(0,0,0,0.8);
+    }
+    .cta-main-btn span{ font-size:16px; }
+    .cta-note{
+      font-size:11px;
+      color:#3a2613;
+      max-width:260px;
+      text-align:right;
     }
 
     /* FOOTER */
-    footer {
-      border-top: 1px solid rgba(255,255,255,0.07);
-      padding: 16px 0 22px;
-      font-size: 11px;
-      color: var(--text-muted);
+    footer{
+      border-top:1px solid rgba(255,255,255,0.08);
+      padding:14px 0 20px;
+      font-size:11px;
+      color:var(--text-muted);
     }
-    .footer-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
     }
-    .footer-links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
+    .footer-links{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
     }
-    .footer-links a {
-      text-decoration: underline;
-      text-underline-offset: 3px;
+    .footer-links a{
+      text-decoration:underline;
+      text-underline-offset:3px;
     }
 
-    /* FLOATING CTA */
-    .float-cta {
-      position: fixed;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 10px;
-      z-index: 40;
-      width: min(460px, 92%);
-      border-radius: 999px;
-      background: rgba(7,10,16,0.94);
-      border: 1px solid rgba(245,198,105,0.4);
-      box-shadow: 0 18px 55px rgba(0,0,0,0.9);
-      padding: 8px 12px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
+    /* BOTTOM NAV (MOBILE APP STYLE) */
+    .bottom-nav{
+      position:fixed;
+      left:0;right:0;bottom:0;
+      height:var(--bottom-nav-height);
+      z-index:40;
+      background:rgba(6,9,16,0.98);
+      border-top:1px solid rgba(255,255,255,0.1);
+      backdrop-filter:blur(12px);
+      display:flex;
+      align-items:center;
+      justify-content:space-around;
     }
-    .float-cta-text {
-      font-size: 11px;
-      color: var(--text-main);
+    .bottom-item{
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:2px;
+      font-size:10px;
+      color:var(--text-muted);
+      text-transform:uppercase;
+      letter-spacing:0.14em;
+      cursor:pointer;
     }
-    .float-cta-btn {
-      border-radius: var(--radius-pill);
-      padding: 7px 12px;
-      border: none;
-      background: linear-gradient(110deg, #f97316, #facc15);
-      color: #1a1007;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      cursor: pointer;
-      white-space: nowrap;
+    .bottom-item-icon{
+      width:20px;height:20px;
+      border-radius:8px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:13px;
+      background:transparent;
+    }
+    .bottom-item.active{
+      color:var(--primary);
+    }
+    .bottom-item.active .bottom-item-icon{
+      background:rgba(245,198,105,0.12);
     }
 
     /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .hero-grid {
-        grid-template-columns: minmax(0,1fr);
-      }
-      .hero-media-card {
-        order: -1;
-      }
-      .spec-tour-grid {
-        grid-template-columns: minmax(0,1fr);
-      }
-      .location-card {
-        grid-template-columns: minmax(0,1fr);
-      }
-      .cta-card {
-        grid-template-columns: minmax(0,1fr);
-      }
-      .cta-actions {
-        align-items: flex-start;
-      }
+    @media(max-width:900px){
+      .hero-grid{ grid-template-columns:minmax(0,1fr); }
+      .hero-media-card{ order:-1; }
+      .gallery-grid{ grid-template-columns:minmax(0,1fr); }
+      .spec-tour-grid{ grid-template-columns:minmax(0,1fr); }
+      .location-card{ grid-template-columns:minmax(0,1fr); }
+      .cta-card{ grid-template-columns:minmax(0,1fr); }
+      .cta-actions{ align-items:flex-start; }
     }
 
-    @media (max-width: 640px) {
-      .nav-inner {
-        gap: 10px;
-      }
-      .nav-links {
-        display: none;
-      }
-      .nav-burger {
-        display: inline-flex;
-      }
-      #tour360 {
-        height: 230px;
-      }
-      .cta-card {
-        padding: 16px;
-      }
-      .hero {
-        padding-top: 14px;
-      }
+    @media(max-width:640px){
+      .nav-links{ display:none; }
+      .nav-burger{ display:inline-flex; }
+      #tour360{ height:230px; }
+      .hero{ padding-top:14px; }
     }
 
-    @media (max-width: 480px) {
-      .hero-cta-main {
-        font-size: 11px;
-        letter-spacing: 0.14em;
+    @media(max-width:480px){
+      .hero-cta-main{
+        font-size:11px;
+        letter-spacing:0.16em;
       }
-      .float-cta {
-        bottom: 8px;
-      }
-      .float-cta-text {
-        font-size: 10px;
-      }
-      .float-cta-btn {
-        padding-inline: 10px;
-        font-size: 10px;
-      }
+      .cta-card{ padding:16px; }
     }
   </style>
 </head>
 <body>
+  <!-- TOP NAV -->
   <header class="nav">
     <div class="container nav-inner">
       <div class="brand">
-        <div class="brand-icon"><div class="brand-icon-inner"></div></div>
+        <div class="brand-mark"><div class="brand-mark-inner"></div></div>
         <div class="brand-text">CitraLand <span>Cluster Cremona</span></div>
       </div>
       <nav class="nav-links" aria-label="Navigasi utama">
-        <a href="#hero" class="active">Cremona</a>
+        <a href="#hero" class="active">Home</a>
+        <a href="#gallery">Kawasan</a>
         <a href="#spesifikasi">Spesifikasi</a>
         <a href="#tour">Virtual Tour</a>
-        <a href="#lokasi">Lokasi</a>
         <a href="#cta">Form Minat</a>
       </nav>
-      <button class="nav-burger" aria-label="Buka menu" onclick="toggleMobileNav()">
+      <button class="nav-burger" aria-label="Menu" onclick="toggleMobileNav()">
         <div class="nav-burger-line"></div>
       </button>
       <button class="nav-cta" onclick="goForm()">
@@ -937,10 +906,10 @@
       </button>
     </div>
     <div id="navMobile" class="nav-links-mobile">
-      <a href="#hero" onclick="closeMobileNav()">Cremona</a>
+      <a href="#hero" onclick="closeMobileNav()">Home</a>
+      <a href="#gallery" onclick="closeMobileNav()">Kawasan</a>
       <a href="#spesifikasi" onclick="closeMobileNav()">Spesifikasi</a>
       <a href="#tour" onclick="closeMobileNav()">Virtual Tour</a>
-      <a href="#lokasi" onclick="closeMobileNav()">Lokasi</a>
       <a href="#cta" onclick="closeMobileNav()">Form Minat</a>
     </div>
   </header>
@@ -958,7 +927,7 @@
             Rumah <span>Mewah</span> 2 Lantai<br />Green Building di Pusat <span>Serang</span>
           </h1>
           <p class="hero-sub">
-            Landing page afiliasi resmi untuk penjualan Tipe Vivace di Cluster Cremona, CitraLand Puri Serang. Isi form minat pembelian dan tim ahli CitraLand akan menghubungi Anda.[web:20][web:59][web:61]
+            Landing page afiliasi profesional untuk penjualan Tipe Vivace di Cluster Cremona, CitraLand Puri Serang. Semua leads diarahkan ke Google Form resmi dan di-follow up langsung oleh tim CitraLand Puri Serang.[web:20][web:59][web:61]
           </p>
 
           <div class="hero-tags">
@@ -982,7 +951,7 @@
             <div class="hero-info-item">
               <div class="hero-info-label">Harga Mulai*</div>
               <div class="hero-info-value">Rp 2,2 Miliar</div>
-              <div class="hero-info-em">*Estimasi KPR mulai ± Rp 8,9 Juta/bulan.[web:20]</div>
+              <div class="hero-info-em">*Estimasi KPR mulai ± Rp 8,9 juta/bulan (detail resmi di form).[web:20]</div>
             </div>
             <div class="hero-info-item">
               <div class="hero-info-label">Lokasi</div>
@@ -992,21 +961,18 @@
           </div>
         </div>
 
-        <aside class="hero-media-card" aria-label="Visual fasad Cluster Cremona">
-          <header class="hero-media-header">
-            <div class="hero-media-label">Fasad Tipe Vivace – Cluster Cremona</div>
-            <div class="hero-media-badge">Show Unit Ready</div>
-          </header>
+        <aside class="hero-media-card" aria-label="Gate utama dan fasad rumah">
           <div class="hero-media-main">
-            <img src="https://www.citralandpuriserang.com/wp-content/uploads/2025/11/BEV-7.webp" alt="Tampak depan rumah dua lantai modern bergaya seperti Tipe Vivace di Cluster Cremona CitraLand Puri Serang" loading="lazy" />
+            <!-- GANTI URL INI DENGAN FOTO FASAD / GATE CREMONA ASLI -->
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a534a9edc?w=1200&q=80" alt="Gate cluster modern dan fasad rumah dua lantai seperti Cluster Cremona CitraLand Puri Serang" loading="lazy" />
             <div class="hero-media-overlay">
               <div class="hero-media-caption">
-                <div class="hero-media-caption-label">Cremona · Kayana District</div>
-                Desain fasad modern dengan bukaan jendela lebar, balkon, dan permainan material yang mendukung konsep hunian hijau hemat energi.[web:61][web:64]
+                <div class="hero-media-caption-label">Gate Cluster & Fasad Tipe Vivace</div>
+                Kombinasi gate cluster modern, security 24 jam, dan fasad dua lantai dengan bukaan lebar untuk memaksimalkan cahaya alami.[web:24][web:61]
               </div>
               <div class="hero-media-pill">
-                <span>♻</span>
-                Green Building EDGE – hemat energi, air, dan material bangunan.[web:61]
+                <span>🛡</span>
+                Sistem cluster dengan gerbang utama & CCTV 24 jam.[web:24]
               </div>
             </div>
           </div>
@@ -1014,39 +980,71 @@
       </div>
     </section>
 
-    <!-- SPESIFIKASI & TOUR -->
+    <!-- GALLERY: GATE · TAMAN · BOULEVARD -->
+    <section id="gallery" class="section">
+      <div class="container section-header">
+        <p class="section-kicker">Gate · Taman · Kawasan</p>
+        <h2 class="section-title">Suasana Cluster Cremona & CitraLand Puri Serang</h2>
+        <p class="section-sub">
+          Selain fasad rumah, calon pembeli perlu merasakan suasana gate cluster, boulevard utama, dan taman tematik yang menjadi ciri khas CitraLand Puri Serang.[web:24]
+        </p>
+      </div>
+      <div class="container gallery-grid">
+        <div class="gallery-main">
+          <!-- GANTI DENGAN FOTO BOULEVARD / KAWASAN CREMONA -->
+          <img src="https://images.unsplash.com/photo-1520256862855-398228c41684?w=1200&q=80" alt="Boulevard utama kawasan residensial dengan pepohonan dan taman seperti di CitraLand Puri Serang" loading="lazy" />
+          <div class="gallery-main-label">Boulevard CitraLand Puri Serang · Jalur hijau & thematic park.[web:24]</div>
+        </div>
+        <div class="gallery-side">
+          <div class="gallery-card">
+            <!-- GATE CLUSTER -->
+            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80" alt="Gate cluster eksklusif dengan pos keamanan" loading="lazy" />
+            <div class="gallery-card-label">Gate Cluster Cremona · Akses one gate system & security.[web:24][web:61]</div>
+          </div>
+          <div class="gallery-card">
+            <!-- TAMAN -->
+            <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=800&q=80" alt="Taman tematik hijau dengan playground dan jalur pedestrian" loading="lazy" />
+            <div class="gallery-card-label">Taman Tematik & Area Komunal · Ruang hijau untuk keluarga.[web:24]</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPESIFIKASI + TOUR -->
     <section id="spesifikasi" class="section">
       <div class="container section-header">
         <p class="section-kicker">Spesifikasi & Virtual Tour</p>
-        <h2 class="section-title">Detail Tipe Vivace & Tur 360°</h2>
-        <p class="section-sub">Lihat spesifikasi teknis Tipe Vivace dan jelajahi interiornya secara interaktif sebelum mengisi form minat pembelian.</p>
+        <h2 class="section-title">Detail Tipe Vivace & Tur 360° per Ruangan</h2>
+        <p class="section-sub">Spesifikasi teknis Tipe Vivace berdasarkan info resmi, plus virtual tour 360° untuk ruang tamu, kamar utama, dapur, dan balkon.</p>
       </div>
       <div class="container spec-tour-grid">
         <!-- SPESIFIKASI -->
         <article class="card" aria-label="Spesifikasi Tipe Vivace">
-          <h3 style="font-size:15px;font-weight:600;margin-bottom:4px;">Spesifikasi Tipe Vivace</h3>
-          <p style="font-size:13px;color:var(--text-muted);">Mengacu pada data resmi Cremona – Tipe Vivace di CitraLand Puri Serang dan mitra pembiayaan.[web:20][web:59][web:61]</p>
+          <h3 style="font-size:15px;font-weight:600;margin-bottom:4px;">Spesifikasi Tipe Vivace – Cluster Cremona</h3>
+          <p style="font-size:13px;color:var(--text-muted);">
+            Ringkasan berdasarkan listing resmi Tipe Vivace di CitraLand Puri Serang dan publikasi terkait Cluster Cremona.[web:20][web:59][web:61]
+          </p>
 
           <div class="spec-grid">
             <div class="spec-item">
               <div class="spec-label">Luas Bangunan</div>
-              <div class="spec-value">110 m²</div>
-              <div class="spec-note">Dua lantai dengan zoning area publik dan privat.[web:20]</div>
+              <div class="spec-value">± 110 m²</div>
+              <div class="spec-note">2 lantai dengan zoning area publik & privat.[web:20]</div>
             </div>
             <div class="spec-item">
               <div class="spec-label">Luas Tanah</div>
-              <div class="spec-value">96 m²</div>
-              <div class="spec-note">Lebar muka ideal untuk carport 2 mobil.[web:20]</div>
+              <div class="spec-value">± 96 m²</div>
+              <div class="spec-note">Lebar muka mendukung carport 2 mobil.[web:20]</div>
             </div>
             <div class="spec-item">
               <div class="spec-label">Kamar Tidur</div>
               <div class="spec-value">4 kamar</div>
-              <div class="spec-note">Kamar utama + kamar anak / tamu + kamar tambahan.[web:20]</div>
+              <div class="spec-note">Kamar utama, kamar anak, tamu, dan tambahan.[web:20]</div>
             </div>
             <div class="spec-item">
               <div class="spec-label">Kamar Mandi</div>
               <div class="spec-value">3 kamar mandi</div>
-              <div class="spec-note">Kamar mandi di tiap lantai untuk kenyamanan keluarga.[web:20]</div>
+              <div class="spec-note">Kamar mandi di tiap lantai untuk kenyamanan.[web:20]</div>
             </div>
           </div>
 
@@ -1054,37 +1052,35 @@
             <div class="spec-item">
               <div class="spec-label">Sertifikasi</div>
               <div class="spec-value">EDGE Green Building</div>
-              <div class="spec-note">Cluster Cremona menjadi klaster bersertifikasi EDGE di CitraLand Puri Serang.[web:61][web:64]</div>
+              <div class="spec-note">Cluster Cremona disebut sebagai rumah bersertifikasi EDGE pertama di Kota Serang.[web:61][web:93]</div>
             </div>
             <div class="spec-item">
               <div class="spec-label">Utilitas</div>
-              <div class="spec-value">2200 Watt · Air tanah</div>
+              <div class="spec-value">2200 Watt · Air Tanah</div>
               <div class="spec-note">Legalitas HGB, non furnished, siap proses KPR.[web:20]</div>
             </div>
           </div>
 
-          <div class="price-box" aria-label="Harga & estimasi KPR">
+          <div class="price-box">
             <div class="price-label">Harga Mulai*</div>
-            <div class="price-main">Rp 2.200.000.000</div>
-            <div class="price-sub">*Estimasi KPR mulai ± Rp 8,9 juta/bulan, tergantung bank & tenor. Detail resmi akan dijelaskan oleh tim CitraLand melalui form minat.[web:20]</div>
+            <div class="price-main">± Rp 2.200.000.000</div>
+            <div class="price-sub">
+              *Estimasi KPR mulai ± Rp 8,9 juta/bulan (detail & promo aktual akan diinformasikan oleh tim CitraLand setelah Anda mengisi form resmi).[web:20][web:71][web:72]
+            </div>
           </div>
 
-          <ul class="usp-list" aria-label="Keunggulan Cluster Cremona">
+          <ul class="usp-list">
             <li>
               <span class="usp-bullet"></span>
-              <span>Cluster Cremona berada di Kayana District CitraLand Puri Serang dengan luas ±4 hektar dan empat pilihan tipe: Cadenza, Sonata, Andante, dan Vivace.[web:61][web:64]</span>
+              <span>Cluster Cremona berlokasi di Kayana District CitraLand Puri Serang dengan luas sekitar 4 hektar dan mengusung tema kota Cremona di Italia.[web:61][web:64]</span>
             </li>
             <li>
               <span class="usp-bullet"></span>
-              <span>Green Building Certified by EDGE (IFC) untuk efisiensi energi, air, dan material bangunan rumah.[web:61]</span>
+              <span>Sertifikasi EDGE fokus pada efisiensi energi, air, dan material sehingga biaya operasional rumah lebih efisien.[web:61]</span>
             </li>
             <li>
               <span class="usp-bullet"></span>
-              <span>Lokasi hyper-local di Kota Serang, dekat tol, stasiun, rumah sakit, sekolah, dan pusat perbelanjaan.[web:20][web:59]</span>
-            </li>
-            <li>
-              <span class="usp-bullet"></span>
-              <span>Penanganan leads langsung oleh tim pemasaran CitraLand Puri Serang melalui Google Form tracking, sehingga proses lebih cepat dan terukur.</span>
+              <span>Penanganan prospek menggunakan Google Form resmi CitraLand Puri Serang sehingga alur follow up lebih terukur dan profesional.[web:75][web:82]</span>
             </li>
           </ul>
         </article>
@@ -1095,7 +1091,7 @@
             <div class="tour-title">
               <span>◎</span> Virtual Tour 360° – Tipe Vivace
             </div>
-            <div class="tour-pill">Panorama Interaktif + Video Atlas</div>
+            <div class="tour-pill">Panorama Ruang Tamu · Kamar Utama · Dapur · Balkon</div>
           </div>
 
           <div class="tour-tabs" role="tablist">
@@ -1110,7 +1106,7 @@
             <div id="tour360"></div>
             <div class="tour-overlay-label" id="sceneLabel">Ruang Tamu – Tipe Vivace</div>
             <div class="tour-overlay-tip">
-              <span>☞</span> Klik & geser untuk putar · scroll untuk zoom
+              <span>☞</span> Geser untuk putar · scroll untuk zoom
             </div>
           </div>
 
@@ -1125,7 +1121,7 @@
           </div>
 
           <div class="tour-mode-toggle">
-            <p>Setelah melihat tur 360°, klik tombol form di bawah untuk mengisi data dan dihubungi langsung oleh tim ahli CitraLand Puri Serang.</p>
+            <p>Sudah melihat tur 360°? Klik tombol di kanan untuk mengisi form minat pembelian resmi CitraLand Puri Serang.</p>
             <button onclick="goForm()">Isi Form Minat ➜</button>
           </div>
         </section>
@@ -1135,42 +1131,40 @@
     <!-- LOKASI -->
     <section id="lokasi" class="section">
       <div class="container section-header">
-        <p class="section-kicker">Lokasi Hyper-Local</p>
+        <p class="section-kicker">Lokasi & Akses</p>
         <h2 class="section-title">Lokasi Cluster Cremona – CitraLand Puri Serang</h2>
-        <p class="section-sub">Berada di kawasan CitraLand Puri Serang di Jl. Lingkar Selatan, Cluster Cremona menawarkan akses cepat ke tol, stasiun, rumah sakit, dan pusat kota Serang.[web:20][web:59][web:49]</p>
+        <p class="section-sub">
+          Berada di Jl. Lingkar Selatan, Cluster Cremona punya akses cepat ke tol, pusat kota, rumah sakit, dan kampus di Kota Serang.[web:20][web:24][web:49]
+        </p>
       </div>
       <div class="container location-card">
         <article class="card">
-          <h3 style="font-size:15px;font-weight:600;margin-bottom:6px;">Akses & Fasilitas Sekitar</h3>
-          <p style="font-size:13px;color:var(--text-muted);">Perkiraan waktu tempuh dari Cluster Cremona menuju fasilitas utama di Kota Serang.[web:20][web:59]</p>
+          <h3 style="font-size:15px;font-weight:600;margin-bottom:6px;">Akses Sekitar Cluster Cremona</h3>
+          <p style="font-size:13px;color:var(--text-muted);">
+            Estimasi waktu tempuh dari CitraLand Puri Serang menuju fasilitas utama di sekitar Kota Serang.[web:20][web:59]
+          </p>
           <ul class="location-list">
             <li>
-              <span>Tol Serang Barat</span>
-              <span class="location-time">± 10 menit</span>
+              <span>Tol Serang Barat</span><span class="location-time">± 10 menit</span>
             </li>
             <li>
-              <span>Stasiun Serang</span>
-              <span class="location-time">± 10 menit</span>
+              <span>Stasiun Serang</span><span class="location-time">± 10 menit</span>
             </li>
             <li>
-              <span>RS Hermina / RS Budi Asih</span>
-              <span class="location-time">± 10 menit</span>
+              <span>RS Hermina / RS Budi Asih</span><span class="location-time">± 10 menit</span>
             </li>
             <li>
-              <span>Mall of Serang</span>
-              <span class="location-time">± 15 menit</span>
+              <span>Mall of Serang</span><span class="location-time">± 15 menit</span>
             </li>
             <li>
-              <span>Universitas Serang Raya</span>
-              <span class="location-time">± 5 menit</span>
+              <span>Universitas Serang Raya</span><span class="location-time">± 5 menit</span>
             </li>
             <li>
-              <span>Pusat Kota Serang</span>
-              <span class="location-time">± 5–10 menit</span>
+              <span>Pusat Kota Serang</span><span class="location-time">± 5–10 menit</span>
             </li>
           </ul>
         </article>
-        <aside class="map-frame" aria-label="Peta lokasi CitraLand Puri Serang">
+        <aside class="map-frame">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.1234567890!2d106.1547!3d-6.1192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e418e3f3a7e5555%3A0x1234567890abcdef!2sCitraland%20Puri%20Serang!5e0!3m2!1sid!2sid!4v1699999999999!5m2!1sid!2sid"
             loading="lazy"
@@ -1180,14 +1174,14 @@
       </div>
     </section>
 
-    <!-- CTA FORM FUNNEL -->
+    <!-- CTA / FORM -->
     <section id="cta" class="cta">
       <div class="container cta-card">
         <div>
           <p class="cta-highlight">Form Minat Pembelian Resmi CitraLand</p>
-          <h2 class="cta-title">Isi Form, Tim CitraLand yang Akan Menghubungi Anda</h2>
+          <h2 class="cta-title">Isi Form, Tim CitraLand yang Menindaklanjuti</h2>
           <p class="cta-text">
-            Semua prospek dari landing page ini akan diarahkan ke Google Form resmi CitraLand Puri Serang. Data Anda langsung diterima dan di-follow-up oleh tim pemasaran CitraLand tanpa perantara.
+            Landing page ini bertugas mengedukasi dan mem-filter minat. Proses follow up, simulasi KPR, dan jadwal kunjungan sepenuhnya ditangani tim pemasaran CitraLand Puri Serang melalui Google Form resmi.
           </p>
           <div class="cta-agent">
             <div class="cta-avatar">
@@ -1205,31 +1199,46 @@
             <span>➜</span>
           </button>
           <div class="cta-note">
-            Form ini dikelola langsung oleh tim pemasaran CitraLand Puri Serang. Pastikan Anda mengisi data dengan benar agar dihubungi tanpa delay.
+            Data yang Anda kirim masuk langsung ke tim CitraLand Puri Serang. Tidak ada biaya pendaftaran, dan Anda bisa membatalkan kapan saja.
           </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <div class="container footer-row">
       <div>© 2026 Cluster Cremona – CitraLand Puri Serang. Halaman afiliasi pemasaran, bukan situs resmi developer.</div>
       <div class="footer-links">
-        <a href="https://www.citralandpuriserang.com/cremona-cluster/" target="_blank" rel="noopener">Halaman resmi Cluster Cremona</a>
-        <a href="https://atlasvirtual.id/tour/citraland-somerset/" target="_blank" rel="noopener">Atlas Virtual Tour</a>
+        <a href="https://www.citralandpuriserang.com/cremona-cluster/" target="_blank" rel="noopener">Halaman resmi Cremona</a>
+        <a href="https://www.citralandpuriserang.com" target="_blank" rel="noopener">Website resmi CitraLand Puri Serang</a>
       </div>
     </div>
   </footer>
 
-  <!-- FLOATING FUNNEL CTA (selalu ke Google Form) -->
-  <div class="float-cta" onclick="goForm()">
-    <div class="float-cta-text">Tertarik dengan Tipe Vivace? Klik di sini untuk isi form resmi CitraLand Puri Serang.</div>
-    <button class="float-cta-btn">Isi Form ➜</button>
-  </div>
+  <!-- BOTTOM NAV (APP-LIKE) -->
+  <nav class="bottom-nav" aria-label="Navigasi bawah">
+    <div class="bottom-item active" onclick="scrollToId('hero');setBottomActive(this)">
+      <div class="bottom-item-icon">⌂</div>
+      <div>Home</div>
+    </div>
+    <div class="bottom-item" onclick="scrollToId('gallery');setBottomActive(this)">
+      <div class="bottom-item-icon">🏞</div>
+      <div>Kawasan</div>
+    </div>
+    <div class="bottom-item" onclick="scrollToId('tour');setBottomActive(this)">
+      <div class="bottom-item-icon">◎</div>
+      <div>Tour</div>
+    </div>
+    <div class="bottom-item" onclick="scrollToId('cta');setBottomActive(this)">
+      <div class="bottom-item-icon">📝</div>
+      <div>Form</div>
+    </div>
+  </nav>
 
   <script>
-    // GANTI ini dengan link Google Form tracking dari tim pemasaran Citraland Puri Serang
+    // GANTI dengan link Google Form resmi tracking afiliasi
     const GFORM_URL = "https://docs.google.com/forms/d/XXXXXXXXXXXX/viewform";
 
     function goForm() {
@@ -1246,27 +1255,31 @@
       nav.style.display = nav.style.display === "flex" ? "none" : "flex";
     }
     function closeMobileNav() {
-      const nav = document.getElementById("navMobile");
-      nav.style.display = "none";
+      document.getElementById("navMobile").style.display = "none";
     }
 
-    // Pannellum 360 – ganti URL panorama dengan foto 360 asli Cremona jika sudah tersedia
+    function setBottomActive(el) {
+      document.querySelectorAll(".bottom-item").forEach(i => i.classList.remove("active"));
+      el.classList.add("active");
+    }
+
+    // PANNELLUM – ganti URL panorama dengan foto 360 ASLI per-ruang (living, master, kitchen, balcony)
     const scenes = {
       living: {
         label: "Ruang Tamu – Tipe Vivace",
-        image: "https://pannellum.org/images/cerro-toco-0.jpg"
+        image: "https://pannellum.org/images/cerro-toco-0.jpg"  // ganti ke panorama ruang tamu asli
       },
       master: {
         label: "Kamar Utama – Tipe Vivace",
-        image: "https://pannellum.org/images/alma-panorama.jpg"
+        image: "https://pannellum.org/images/alma-panorama.jpg" // ganti ke panorama kamar utama
       },
       kitchen: {
         label: "Dapur & Dining – Tipe Vivace",
-        image: "https://pannellum.org/images/bma-1.jpg"
+        image: "https://pannellum.org/images/bma-1.jpg"         // ganti ke panorama dapur
       },
       balcony: {
         label: "Balkon & Fasad – Tipe Vivace",
-        image: "https://pannellum.org/images/cerro-toco-1.jpg"
+        image: "https://pannellum.org/images/cerro-toco-1.jpg"  // ganti ke panorama balkon/fasad
       }
     };
 
@@ -1276,7 +1289,7 @@
       const scene = scenes[sceneKey];
       document.getElementById("sceneLabel").textContent = scene.label;
       if (viewer) {
-        try { viewer.destroy(); } catch (e) {}
+        try { viewer.destroy(); } catch(e) {}
       }
       viewer = pannellum.viewer("tour360", {
         type: "equirectangular",
